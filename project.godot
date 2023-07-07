@@ -22,4 +22,4 @@ window/stretch/mode="canvas_items"
 [rendering]
 
 renderer/rendering_method="mobile"
-environment/defaults/default_clear_color=Color(0.52549, 0.780392, 0.729412, 0.866667)
+environment/defaults/default_clear_color=Color(0.843137, 0.6, 0.486275, 1)
