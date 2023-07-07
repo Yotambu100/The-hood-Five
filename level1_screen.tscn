@@ -1,0 +1,381 @@
+[gd_scene load_steps=20 format=3 uid="uid://bthjmbbgmdvca"]
+
+[ext_resource type="Texture2D" uid="uid://dua8jg2jyynjk" path="res://images/Player full.png" id="1_xddkb"]
+[ext_resource type="Texture2D" uid="uid://bepehxg5w2gtm" path="res://images/log.png" id="16_qnhix"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qpxa2"]
+load_path = "res://.godot/imported/Dead Ground 01.png-9b0662ec8bf51609db4f5eca792e3121.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pxvpp"]
+load_path = "res://.godot/imported/Dead Ground 02.png-34c1269da765de881beb248e2ba9d173.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gyvw2"]
+load_path = "res://.godot/imported/Dead Ground 03.png-5ea591bb096fe0e0de6e9756c547c5d0.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7y51w"]
+load_path = "res://.godot/imported/Dead Ground 04.png-fed0ff7cb5ab5794c3710b277b267135.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5g2ld"]
+load_path = "res://.godot/imported/Idle 01.png-29f7bbf54c4631324e358f18c7010736.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tpk22"]
+load_path = "res://.godot/imported/Idle 02.png-864590bcf8028b23e9e4bed8d277f602.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_oge3r"]
+load_path = "res://.godot/imported/Idle 03.png-e05452da85903b2e5c283aaba8e59441.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ncljs"]
+load_path = "res://.godot/imported/Idle 04.png-5581ebd23aca616195d1ec672a0dd7dc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hrqa3"]
+load_path = "res://.godot/imported/Idle 05.png-8bd7c9c4423ab50e903c24e8ecc32860.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_a18sh"]
+load_path = "res://.godot/imported/Run 01.png-7ee269ffd6b4e9870007f2c3fbd4c3a9.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2jr23"]
+load_path = "res://.godot/imported/Run 02.png-b7cf6459ed8b53fca3cb25a3ddf19f13.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_c812d"]
+load_path = "res://.godot/imported/Run 03.png-734f5e8b80654eb98ad4ab384dae039e.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ovhvw"]
+load_path = "res://.godot/imported/Run 04.png-b7ae2a95ca6dfe0bc7a3729d5b1b634f.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xtfex"]
+load_path = "res://.godot/imported/Run 05.png-205bfd79ffe8381167b9d999953f3dd7.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_edplu"]
+load_path = "res://.godot/imported/Run 06.png-6a1a1225a02e55773ddd95455546ad92.ctex"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l77ga"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_xddkb")
+}],
+"loop": true,
+"name": &"hood5",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_qpxa2")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_pxvpp")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_gyvw2")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_7y51w")
+}],
+"loop": true,
+"name": &"hurt",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_5g2ld")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_tpk22")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_oge3r")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_ncljs")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_hrqa3")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 8.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"log",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_a18sh")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_2jr23")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_c812d")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_ovhvw")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_xtfex")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_edplu")
+}],
+"loop": true,
+"name": &"run",
+"speed": 8.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jb4r1"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_qnhix")
+}],
+"loop": true,
+"name": &"log1",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"log2",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"log3",
+"speed": 5.0
+}]
+
+[node name="Player" type="Area2D"]
+position = Vector2(497, 307)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-237, 166)
+scale = Vector2(0.15, 0.15)
+sprite_frames = SubResource("SpriteFrames_l77ga")
+animation = &"hood5"
+
+[node name="log_animated" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(48, 403)
+scale = Vector2(1.03403, 1.03403)
+sprite_frames = SubResource("SpriteFrames_jb4r1")
+animation = &"log1"
+
+[node name="blue_log" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-345, 265)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("16_qnhix")
+region_enabled = true
+region_rect = Rect2(244, 244, 257, 73)
+
+[node name="brown_log2" type="Sprite2D" parent="."]
+position = Vector2(-33, 254)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("16_qnhix")
+region_enabled = true
+region_rect = Rect2(236, 79, 257, 73)
+
+[node name="brown_log3" type="Sprite2D" parent="."]
+position = Vector2(-110, 254)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("16_qnhix")
+region_enabled = true
+region_rect = Rect2(236, 79, 257, 73)
+
+[node name="brown_log4" type="Sprite2D" parent="."]
+position = Vector2(-187, 254)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("16_qnhix")
+region_enabled = true
+region_rect = Rect2(236, 79, 257, 73)
+
+[node name="brown_log5" type="Sprite2D" parent="."]
+position = Vector2(-264, 254)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("16_qnhix")
+region_enabled = true
+region_rect = Rect2(236, 79, 257, 73)
+
+[node name="brown_log6" type="Sprite2D" parent="."]
+position = Vector2(-319, 195)
+rotation = 1.5708
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("16_qnhix")
+region_enabled = true
+region_rect = Rect2(236, 79, 257, 73)
+
+[node name="brown_log15" type="Sprite2D" parent="."]
+position = Vector2(-319, 118)
+rotation = 1.5708
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("16_qnhix")
+region_enabled = true
+region_rect = Rect2(236, 79, 257, 73)
+
+[node name="brown_log16" type="Sprite2D" parent="."]
+position = Vector2(-319, 41)
+rotation = 1.5708
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("16_qnhix")
+region_enabled = true
+region_rect = Rect2(236, 79, 257, 73)
+
+[node name="brown_log17" type="Sprite2D" parent="."]
+position = Vector2(-319, -31)
+rotation = 1.5708
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("16_qnhix")
+region_enabled = true
+region_rect = Rect2(236, 79, 257, 73)
+
+[node name="blue_log2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-345, 265)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("16_qnhix")
+region_enabled = true
+region_rect = Rect2(244, 244, 257, 73)
+
+[node name="brown_log7" type="Sprite2D" parent="."]
+position = Vector2(38.55, 253.95)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("16_qnhix")
+region_enabled = true
+region_rect = Rect2(236, 79, 257, 73)
+
+[node name="brown_log8" type="Sprite2D" parent="."]
+position = Vector2(422.55, 253.95)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("16_qnhix")
+region_enabled = true
+region_rect = Rect2(236, 79, 257, 73)
+
+[node name="brown_log9" type="Sprite2D" parent="."]
+position = Vector2(345.55, 253.95)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("16_qnhix")
+region_enabled = true
+region_rect = Rect2(236, 79, 257, 73)
+
+[node name="brown_log13" type="Sprite2D" parent="."]
+position = Vector2(575, 254)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("16_qnhix")
+region_enabled = true
+region_rect = Rect2(236, 79, 257, 73)
+
+[node name="brown_log14" type="Sprite2D" parent="."]
+position = Vector2(499.55, 253.95)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("16_qnhix")
+region_enabled = true
+region_rect = Rect2(236, 79, 257, 73)
+
+[node name="brown_log11" type="Sprite2D" parent="."]
+position = Vector2(156, 70)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("16_qnhix")
+region_enabled = true
+region_rect = Rect2(236, 79, 257, 73)
+
+[node name="brown_log19" type="Sprite2D" parent="."]
+position = Vector2(230, 70)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("16_qnhix")
+region_enabled = true
+region_rect = Rect2(236, 79, 257, 73)
+
+[node name="brown_log12" type="Sprite2D" parent="."]
+position = Vector2(96, 199)
+rotation = 1.57079
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("16_qnhix")
+region_enabled = true
+region_rect = Rect2(236, 79, 257, 73)
+
+[node name="brown_log18" type="Sprite2D" parent="."]
+position = Vector2(96, 127)
+rotation = 1.57079
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("16_qnhix")
+region_enabled = true
+region_rect = Rect2(236, 79, 257, 73)
+
+[node name="blue_connector" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-339, 169)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("16_qnhix")
+region_enabled = true
+region_rect = Rect2(63, 199, 131, 131)
+
+[node name="brown_connector" type="Sprite2D" parent="."]
+position = Vector2(-319, 254)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("16_qnhix")
+region_enabled = true
+region_rect = Rect2(64, 47, 131, 131)
+
+[node name="brown_connector3" type="Sprite2D" parent="."]
+position = Vector2(-318, -90)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("16_qnhix")
+region_enabled = true
+region_rect = Rect2(64, 47, 131, 131)
+
+[node name="brown_connector4" type="Sprite2D" parent="."]
+position = Vector2(96, 254)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("16_qnhix")
+region_enabled = true
+region_rect = Rect2(64, 47, 131, 131)
+
+[node name="brown_connector5" type="Sprite2D" parent="."]
+position = Vector2(96, 69)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("16_qnhix")
+region_enabled = true
+region_rect = Rect2(64, 47, 131, 131)
+
+[node name="brown_log20" type="Sprite2D" parent="."]
+position = Vector2(288.65, 198.65)
+rotation = 1.57079
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("16_qnhix")
+region_enabled = true
+region_rect = Rect2(236, 79, 257, 73)
+
+[node name="brown_log21" type="Sprite2D" parent="."]
+position = Vector2(288.65, 126.65)
+rotation = 1.57079
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("16_qnhix")
+region_enabled = true
+region_rect = Rect2(236, 79, 257, 73)
+
+[node name="brown_connector6" type="Sprite2D" parent="."]
+position = Vector2(288.65, 253.65)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("16_qnhix")
+region_enabled = true
+region_rect = Rect2(64, 47, 131, 131)
+
+[node name="brown_connector7" type="Sprite2D" parent="."]
+position = Vector2(288.65, 68.65)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("16_qnhix")
+region_enabled = true
+region_rect = Rect2(64, 47, 131, 131)
+
+[node name="brown_connector2" type="Sprite2D" parent="."]
+position = Vector2(633, 254)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("16_qnhix")
+region_enabled = true
+region_rect = Rect2(64, 47, 131, 131)
