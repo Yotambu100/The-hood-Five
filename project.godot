@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="The-hood-5"
-run/main_scene="res://level_real_1.tscn"
+run/main_scene="res://level_real_4.tscn"
 config/features=PackedStringArray("4.1", "Mobile")
 config/icon="res://icon.svg"
 <<<<<<<Updatedupstream<<<<<<<HEADrun/main_scene="res://CustomWorld/CustomWorld.tscn"
@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 [display]
 
 window/stretch/mode="canvas_items"
+
+[dotnet]
+
+project/assembly_name="Thehood 5"
 
 [rendering]
 

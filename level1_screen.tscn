@@ -157,7 +157,7 @@ region_enabled = true
 region_rect = Rect2(236, 79, 257, 73)
 
 [node name="brown_log15" type="Sprite2D" parent="."]
-position = Vector2(-319, 118)
+position = Vector2(-319, 119)
 rotation = 1.5708
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("16_qnhix")

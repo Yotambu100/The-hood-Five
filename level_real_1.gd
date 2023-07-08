@@ -1,5 +1,5 @@
 extends Node2D
-var level_actions =["r", "r", "r", "r", "r", "j"]
+var level_actions =["jr", "jr", "r", "r", "r", "j"]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
