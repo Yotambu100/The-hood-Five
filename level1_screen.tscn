@@ -80,7 +80,7 @@ clip_children = 2
 position = Vector2(-237, 166)
 scale = Vector2(0.15, 0.15)
 sprite_frames = SubResource("SpriteFrames_lh5b4")
-frame_progress = 0.992735
+frame_progress = 0.217995
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
 visible = false
