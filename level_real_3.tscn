@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cs4sk8a0rywf5" path="res://logs/background.png" id="5_67ung"]
 [ext_resource type="PackedScene" uid="uid://y22qwdmagkle" path="res://AutoPlayer/Player.tscn" id="6_6rkrr"]
 [ext_resource type="Texture2D" uid="uid://cpbkifti6mk74" path="res://AutoPlayer/Player_idle1.png" id="7_4hiid"]
-[ext_resource type="Texture2D" uid="uid://bk0uwxhqvcjfv" path="res://AutoPlayer/Player_idle2.png" id="8_43ig1"]
+[ext_resource type="Texture2D" uid="uid://bk0uwxhqvcjfv" path="res://player/Player hands up.png" id="8_43ig1"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_0uto6"]
 tile_data = PackedInt32Array(0, 8, 0, 65536, 8, 0, 131072, 8, 0, 196608, 8, 0, 262144, 8, 0, 327680, 8, 0, 393216, 8, 0, 1, 8, 0, 65537, 8, 0, 131073, 8, 0, 196609, 8, 0, 262145, 8, 0, 327681, 8, 0, 393217, 8, 0, 2, 8, 0, 65538, 8, 0, 131074, 8, 0, 196610, 8, 0, 262146, 8, 0, 327682, 8, 0, 393218, 8, 0, 3, 8, 0, 65539, 8, 0, 131075, 8, 0, 196611, 8, 0, 262147, 8, 0, 327683, 8, 0, 393219, 8, 0, 4, 8, 0, 65540, 8, 0, 131076, 8, 0, 196612, 8, 0, 262148, 8, 0, 327684, 8, 0, 393220, 8, 0, 5, 8, 0, 65541, 8, 0, 131077, 8, 0, 196613, 8, 0, 262149, 8, 0, 327685, 8, 0, 393221, 8, 0, 6, 8, 0, 65542, 8, 0, 131078, 8, 0, 196614, 8, 0, 262150, 8, 0, 327686, 8, 0, 393222, 8, 0, 7, 8, 0, 65543, 8, 0, 131079, 8, 0, 196615, 8, 0, 262151, 8, 0, 327687, 8, 0, 393223, 8, 0, 8, 8, 0, 65544, 8, 0, 131080, 8, 0, 196616, 8, 0, 262152, 8, 0, 327688, 8, 0, 393224, 8, 0)

@@ -77,16 +77,6 @@ sources/3 = SubResource("TileSetAtlasSource_rshni")
 sources/5 = SubResource("TileSetAtlasSource_4xon2")
 sources/8 = SubResource("TileSetAtlasSource_q18pu")
 
-<<<<<<< HEAD
-[sub_resource type="SpriteFrames" id="SpriteFrames_rl430"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("10_lb0ix")
-}],
-"loop": true,
-"name": &"default",
-=======
 [sub_resource type="SpriteFrames" id="SpriteFrames_5s3n2"]
 animations = [{
 "frames": [{
@@ -98,7 +88,6 @@ animations = [{
 }],
 "loop": true,
 "name": &"player_move",
->>>>>>> 7de0927 (major change)
 "speed": 5.0
 }]
 
@@ -136,8 +125,29 @@ animation = &"player_move"
 autoplay = "player_move"
 frame_progress = 0.827327
 
+[node name="ButtonSettings" type="Button" parent="CanvasLayer"]
+offset_left = 1079.0
+offset_top = 18.0
+offset_right = 1135.0
+offset_bottom = 73.0
+text = "settings"
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_ax5xo")
 
 [node name="Momy" parent="." instance=ExtResource("11_7h2op")]
 position = Vector2(928, 418)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("4_l66rh")]
+position = Vector2(187, 550)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(953, 467)
+scale = Vector2(0.569333, 0.754545)
+sprite_frames = SubResource("SpriteFrames_rl430")
+
+[node name="DraggableLog" parent="." instance=ExtResource("11_6pyrq")]
+position = Vector2(576, 314)
+
+[connection signal="pressed" from="CanvasLayer/ButtonSettings" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/ButtonSettings" to="." method="_on_button_settings_pressed"]

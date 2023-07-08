@@ -18,5 +18,5 @@ func _on_tile_map_ready():
 	
 
 
-func _on_button_pressed():
+func _on_button_settings_pressed():
 	get_tree().change_scene_to_file("res://main.tscn")
