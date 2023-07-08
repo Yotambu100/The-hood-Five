@@ -1,5 +1,6 @@
 #ofer
 extends Node2D
+var timer=5
 
 var level_actions =["jr","r", "jr", "r", "r", "r", "j"]
 
@@ -15,4 +16,14 @@ func _process(delta):
 
 func _on_button_settings_pressed():
 	get_tree().change_scene_to_file("res://main.tscn")
+
+
+
+func _on_timer_countdown_2_timeout():
+	if timer>-1:
+		var clock = get_node("CanvasLayer/LBL_Time2")
+		clock.set_text(str(timer)+" seconds left")
+		if (timer==0):
+			clock.set_text("your time is up !")
+		timer -=1
 

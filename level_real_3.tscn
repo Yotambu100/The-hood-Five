@@ -1,11 +1,12 @@
-[gd_scene load_steps=17 format=3 uid="uid://hq4uphoeibcx"]
+[gd_scene load_steps=18 format=3 uid="uid://hq4uphoeibcx"]
 
 [ext_resource type="Script" path="res://level_real_3.gd" id="1_fpwbd"]
 [ext_resource type="Texture2D" uid="uid://bpog7h1mcw0kh" path="res://logs/jump_pad.png" id="2_6ofqa"]
-[ext_resource type="Texture2D" uid="uid://bt4slornkocuv" path="res://logs/spikes1.png" id="3_5gsip"]
+[ext_resource type="Texture2D" uid="uid://cevgbquy7dwql" path="res://logs/spikes1.png" id="3_5gsip"]
 [ext_resource type="Texture2D" uid="uid://ca3eysnbjvsvp" path="res://logs/logs3.png" id="4_n2iv1"]
 [ext_resource type="Texture2D" uid="uid://cs4sk8a0rywf5" path="res://logs/background.png" id="5_67ung"]
 [ext_resource type="PackedScene" uid="uid://y22qwdmagkle" path="res://AutoPlayer/Player.tscn" id="6_6rkrr"]
+[ext_resource type="Script" path="res://Timer_countdown.gd" id="6_h2w6t"]
 [ext_resource type="Texture2D" uid="uid://cpbkifti6mk74" path="res://AutoPlayer/Player_idle1.png" id="7_4hiid"]
 [ext_resource type="Texture2D" uid="uid://bk0uwxhqvcjfv" path="res://player/Player hands up.png" id="8_43ig1"]
 
@@ -176,6 +177,26 @@ offset_bottom = 73.0
 text = "settings"
 metadata/_edit_use_anchors_ = true
 
+[node name="LBL_Time3" type="Label" parent="CanvasLayer"]
+z_as_relative = false
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -772.0
+offset_top = -191.0
+offset_right = -731.0
+offset_bottom = -165.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(4, 4)
+
+[node name="Timer_countdown3" type="Timer" parent="CanvasLayer/LBL_Time3"]
+process_priority = 1
+autostart = true
+script = ExtResource("6_h2w6t")
+
 [node name="CharacterBody2D" parent="." instance=ExtResource("6_6rkrr")]
 position = Vector2(226, 331)
 
@@ -187,3 +208,4 @@ animation = &"player_move"
 autoplay = "player_move"
 
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
+[connection signal="timeout" from="CanvasLayer/LBL_Time3/Timer_countdown3" to="." method="_on_timer_countdown_3_timeout"]

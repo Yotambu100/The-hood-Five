@@ -1,8 +1,9 @@
-[gd_scene load_steps=19 format=3 uid="uid://bigirv3bx7cio"]
+[gd_scene load_steps=20 format=3 uid="uid://bigirv3bx7cio"]
+
 [ext_resource type="Script" path="res://level_real_2.gd" id="1_52rv3"]
 [ext_resource type="Script" path="res://CanvasLayer2.gd" id="2_8n06m"]
 [ext_resource type="Texture2D" uid="uid://bpog7h1mcw0kh" path="res://logs/jump_pad.png" id="2_8v0bc"]
-[ext_resource type="Texture2D" uid="uid://bt4slornkocuv" path="res://logs/spikes1.png" id="3_hryvv"]
+[ext_resource type="Texture2D" uid="uid://cevgbquy7dwql" path="res://logs/spikes1.png" id="3_hryvv"]
 [ext_resource type="Texture2D" uid="uid://ca3eysnbjvsvp" path="res://logs/logs3.png" id="4_bn2gu"]
 [ext_resource type="Texture2D" uid="uid://cs4sk8a0rywf5" path="res://logs/background.png" id="5_p1y6e"]
 [ext_resource type="PackedScene" uid="uid://y22qwdmagkle" path="res://AutoPlayer/Player.tscn" id="6_j6ydt"]
@@ -176,7 +177,7 @@ grow_vertical = 2
 offset_right = 8.0
 offset_bottom = 8.0
 
-[node name="LBL_Time" type="Label" parent="CanvasLayer"]
+[node name="LBL_Time2" type="Label" parent="CanvasLayer"]
 z_as_relative = false
 anchors_preset = 6
 anchor_left = 1.0
@@ -191,11 +192,10 @@ grow_horizontal = 0
 grow_vertical = 2
 scale = Vector2(4, 4)
 
-[node name="Timer_countdown" type="Timer" parent="CanvasLayer/LBL_Time"]
+[node name="Timer_countdown2" type="Timer" parent="CanvasLayer/LBL_Time2"]
 process_priority = 1
 autostart = true
 script = ExtResource("7_qkspt")
-
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("6_j6ydt")]
 position = Vector2(226, 331)
@@ -216,7 +216,5 @@ position = Vector2(360, 434)
 position = Vector2(701, 423)
 
 [connection signal="ready" from="CanvasLayer/TileMap" to="." method="_on_tile_map_ready"]
-
 [connection signal="pressed" from="CanvasLayer/ButtonSettings" to="." method="_on_button_settings_pressed"]
-
-[connection signal="timeout" from="CanvasLayer/LBL_Time/Timer_countdown" to="." method="_on_timer_countdown_timeout"]
+[connection signal="timeout" from="CanvasLayer/LBL_Time2/Timer_countdown2" to="." method="_on_timer_countdown_2_timeout"]

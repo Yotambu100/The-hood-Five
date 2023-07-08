@@ -1,12 +1,13 @@
-[gd_scene load_steps=16 format=3 uid="uid://coxg2jfp64pr"]
+[gd_scene load_steps=17 format=3 uid="uid://coxg2jfp64pr"]
 
 [ext_resource type="Script" path="res://level_real_1.gd" id="1_vdvss"]
 [ext_resource type="Texture2D" uid="uid://bpog7h1mcw0kh" path="res://logs/jump_pad.png" id="2_s2x5d"]
-[ext_resource type="Texture2D" uid="uid://bt4slornkocuv" path="res://logs/spikes1.png" id="3_bpmmt"]
+[ext_resource type="Texture2D" uid="uid://cevgbquy7dwql" path="res://logs/spikes1.png" id="3_bpmmt"]
 [ext_resource type="Texture2D" uid="uid://ca3eysnbjvsvp" path="res://logs/logs3.png" id="3_i5puy"]
 [ext_resource type="PackedScene" uid="uid://y22qwdmagkle" path="res://AutoPlayer/Player.tscn" id="4_l66rh"]
 [ext_resource type="Texture2D" uid="uid://cs4sk8a0rywf5" path="res://logs/background.png" id="4_vqu1b"]
 [ext_resource type="AudioStream" uid="uid://m8cn6bag7rg4" path="res://music/The Urban Groove - Hanu Dixit.mp3" id="5_ax5xo"]
+[ext_resource type="Script" path="res://Timer_countdown.gd" id="6_hq22p"]
 [ext_resource type="Texture2D" uid="uid://hwq2qcy6n46k" path="res://images/mother.png" id="10_lb0ix"]
 [ext_resource type="PackedScene" uid="uid://b5fwak6yrhgoo" path="res://movable/DraggableLog/DraggableLog.tscn" id="11_6pyrq"]
 
@@ -113,6 +114,26 @@ offset_right = 1135.0
 offset_bottom = 73.0
 text = "settings"
 
+[node name="LBL_Time1" type="Label" parent="CanvasLayer"]
+z_as_relative = false
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -772.0
+offset_top = -191.0
+offset_right = -731.0
+offset_bottom = -165.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(4, 4)
+
+[node name="Timer_countdown1" type="Timer" parent="CanvasLayer/LBL_Time1"]
+process_priority = 1
+autostart = true
+script = ExtResource("6_hq22p")
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_ax5xo")
 autoplay = true
@@ -129,3 +150,4 @@ sprite_frames = SubResource("SpriteFrames_rl430")
 position = Vector2(576, 314)
 
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
+[connection signal="timeout" from="CanvasLayer/LBL_Time1/Timer_countdown1" to="." method="_on_timer_countdown_1_timeout"]
