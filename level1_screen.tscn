@@ -80,7 +80,7 @@ clip_children = 2
 position = Vector2(-237, 166)
 scale = Vector2(0.15, 0.15)
 sprite_frames = SubResource("SpriteFrames_lh5b4")
-frame_progress = 0.217995
+frame_progress = 0.654579
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
 visible = false
@@ -96,6 +96,14 @@ offset_right = -68.0
 offset_bottom = -160.0
 text = "Show player next moves"
 underline = 1
+
+[node name="next_steps_label" type="RichTextLabel" parent="."]
+offset_left = -254.0
+offset_top = -169.0
+offset_right = 115.0
+offset_bottom = -101.0
+text = "fwd --> fwd --> jump --> fwd --> fwd --> jump"
+fit_content = true
 
 [node name="log_animated" type="AnimatedSprite2D" parent="."]
 visible = false

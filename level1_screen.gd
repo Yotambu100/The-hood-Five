@@ -20,6 +20,7 @@ func _on_show_next_moves_pressed():
 
 	# Position the label.
 	label.position = Vector2(100, 100)
+#	get_parent(get_child("next_steps_label")).
 # Draw the label.
 	#label.draw_string(Vector2(100, 100))
 
