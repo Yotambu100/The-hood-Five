@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=3 uid="uid://b5fwak6yrhgoo"]
+
+[ext_resource type="Script" path="res://movable/DraggableLog/DraggableLog.gd" id="1_07cgf"]
+[ext_resource type="Texture2D" uid="uid://ca3eysnbjvsvp" path="res://logs/logs3.png" id="2_ix87p"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1akh4"]
+texture = ExtResource("2_ix87p")
+texture_region_size = Vector2i(36, 36)
+0:6/size_in_atlas = Vector2i(2, 2)
+0:6/0 = 0
+0:8/size_in_atlas = Vector2i(2, 6)
+0:8/0 = 0
+0:14/size_in_atlas = Vector2i(2, 6)
+0:14/0 = 0
+0:4/size_in_atlas = Vector2i(6, 2)
+0:4/0 = 0
+0:2/size_in_atlas = Vector2i(6, 2)
+0:2/0 = 0
+0:0/size_in_atlas = Vector2i(2, 2)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_pbtyo"]
+tile_size = Vector2i(36, 36)
+sources/0 = SubResource("TileSetAtlasSource_1akh4")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_et84p"]
+size = Vector2(89.5, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r11l8"]
+size = Vector2(89, 29.5)
+
+[node name="DraggableLog" type="Node2D"]
+script = ExtResource("1_07cgf")
+
+[node name="TileMap" type="TileMap" parent="."]
+scale = Vector2(0.41, 0.41)
+tile_set = SubResource("TileSet_pbtyo")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 0, 4)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(7.25, 7.5)
+shape = SubResource("RectangleShape2D_et84p")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(7, 7)
+shape = SubResource("RectangleShape2D_r11l8")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_Area2D_input_event"]
