@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="The-hood-5"
-run/main_scene="res://level_real_1.tscn"
+run/main_scene="res://main.tscn"
 config/features=PackedStringArray("4.1", "Mobile")
 config/icon="res://icon.svg"
 <<<<<<<Updatedupstream<<<<<<<HEADrun/main_scene="res://CustomWorld/CustomWorld.tscn"
@@ -19,9 +19,6 @@ config/icon="res://icon.svg"
 [autoload]
 
 Game="*res://Globals/Game.gd"
-
-[autoload]
-
 SceneTranstion="*res://scene_transtion.tscn"
 
 [display]
