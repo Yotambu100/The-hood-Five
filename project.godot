@@ -11,11 +11,16 @@ config_version=5
 [application]
 
 config/name="The-hood-5"
-run/main_scene="res://test_world.tscn"
-config/features=PackedStringArray("4.1", "Mobile")
+run/main_scene="res://level1_screen.tscn"
+config/features=PackedStringArray("4.0", "Mobile")
 config/icon="res://icon.svg"
 <<<<<<<Updatedupstream<<<<<<<HEADrun/main_scene="res://CustomWorld/CustomWorld.tscn"
+
+[display]
+
+window/stretch/mode="canvas_items"
 
 [rendering]
 
 renderer/rendering_method="mobile"
+environment/defaults/default_clear_color=Color(0.843137, 0.6, 0.486275, 1)
