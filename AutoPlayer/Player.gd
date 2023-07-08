@@ -1,10 +1,6 @@
 extends CharacterBody2D
 
-
 const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
-const JUMP_VELOCITY_SPRING = -1000.0
-var cur_jump_velocity = JUMP_VELOCITY
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 const ACTIONS_DICT = {
@@ -18,27 +14,37 @@ const ACTIONS_DICT = {
 
 
 var actions = ["p"]
+@onready var anim = get_node("AnimatedSprite2D")
 
 func _ready():
-	
-	
-	
+	Game.level_is_running = false
 	actions = get_parent().level_actions
-	get_node("AnimatedSprite2D").play("Idle")
+	anim.play("Idle")
 
 var cur_action = ACTIONS_DICT[actions.pop_front()]
 var jumped_this_move = false
-
+var anim_is_running = false
 
 func _on_move_timer_timeout():
-	print("on move")
 	if Game.level_is_running:
 		if actions.size() == 0:
 			get_node("MoveTimer").queue_free()
 			cur_action = ACTIONS_DICT["p"]
-		else:	
+			#get_tree().quit()
+		else:
+			if not anim_is_running and cur_action != ACTIONS_DICT["p"]:
+				anim.play("Run")
+				anim_is_running = true
+				
 			jumped_this_move = false
 			cur_action = ACTIONS_DICT[actions.pop_front()]
+			print(cur_action)
+	else:		
+		if anim_is_running:
+			anim.play("Idle")
+			anim_is_running = false
+			
+		cur_action = ACTIONS_DICT["p"]		
 
 
 
@@ -48,27 +54,27 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y += gravity * delta
 		
-		
+
 	match cur_action:
 		ACTIONS_DICT["l"]:
-			get_node("AnimatedSprite2D").flip_h = false
+			anim.flip_h = false
 			velocity.x = -1 * SPEED
 			
 		ACTIONS_DICT["r"]:
-			get_node("AnimatedSprite2D").flip_h = true
+			anim.flip_h = true
 			velocity.x = SPEED
 			
 		ACTIONS_DICT["j"]:
 			if is_on_floor() and not jumped_this_move:
-				velocity.y = cur_jump_velocity
+				velocity.y = Game.cur_jump_velocity
 				jumped_this_move = true
 			else:
 				velocity.x = move_toward(velocity.x, 0, SPEED)
 				
 		ACTIONS_DICT["jr"]:
-			get_node("AnimatedSprite2D").flip_h = true
+			anim.flip_h = true
 			if is_on_floor() and not jumped_this_move:
-				velocity.y = cur_jump_velocity
+				velocity.y = Game.cur_jump_velocity
 				jumped_this_move = true
 			elif is_on_floor() and jumped_this_move:
 				velocity.x = move_toward(velocity.x, 0, SPEED)
@@ -76,29 +82,22 @@ func _physics_process(delta):
 				velocity.x = SPEED
 
 		ACTIONS_DICT["jl"]:
-			get_node("AnimatedSprite2D").flip_h = false
+			anim.flip_h = false
 			if is_on_floor() and not jumped_this_move:
-				velocity.y = cur_jump_velocity
+				velocity.y = Game.cur_jump_velocity
 				jumped_this_move = true
 			elif is_on_floor() and jumped_this_move:
 				velocity.x = move_toward(velocity.x, 0, SPEED)
 			else:
 				velocity.x = -1 * SPEED
 				
-		ACTIONS_DICT["p"]:
+		ACTIONS_DICT["p"]:			
+			anim.play("Idle")
+			anim_is_running = false
+			
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 			
 
 	move_and_slide()
 
-
-func _on_spring_loaded():
-	cur_jump_velocity = JUMP_VELOCITY_SPRING
-
-
-func _on_spring_unloaded():
-	cur_jump_velocity = JUMP_VELOCITY
-
-def timeOut():
-	print("This is a global function")
 

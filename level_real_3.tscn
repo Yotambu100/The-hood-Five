@@ -1,11 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://hq4uphoeibcx"]
+[gd_scene load_steps=17 format=3 uid="uid://hq4uphoeibcx"]
 
 [ext_resource type="Script" path="res://level_real_3.gd" id="1_fpwbd"]
 [ext_resource type="Texture2D" uid="uid://bpog7h1mcw0kh" path="res://logs/jump_pad.png" id="2_6ofqa"]
 [ext_resource type="Texture2D" uid="uid://cevgbquy7dwql" path="res://logs/spikes1.png" id="3_5gsip"]
 [ext_resource type="Texture2D" uid="uid://ca3eysnbjvsvp" path="res://logs/logs3.png" id="4_n2iv1"]
 [ext_resource type="Texture2D" uid="uid://cs4sk8a0rywf5" path="res://logs/background.png" id="5_67ung"]
-[ext_resource type="PackedScene" uid="uid://y22qwdmagkle" path="res://AutoPlayer/Player.tscn" id="6_6rkrr"]
 [ext_resource type="Script" path="res://Timer_countdown.gd" id="6_h2w6t"]
 [ext_resource type="Texture2D" uid="uid://cpbkifti6mk74" path="res://AutoPlayer/Player_idle1.png" id="7_4hiid"]
 [ext_resource type="Texture2D" uid="uid://bk0uwxhqvcjfv" path="res://player/Player hands up.png" id="8_43ig1"]
@@ -196,9 +195,6 @@ scale = Vector2(4, 4)
 process_priority = 1
 autostart = true
 script = ExtResource("6_h2w6t")
-
-[node name="CharacterBody2D" parent="." instance=ExtResource("6_6rkrr")]
-position = Vector2(226, 331)
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
 position = Vector2(-3, -3)
