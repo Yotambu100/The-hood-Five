@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://e5fx755sjhl6"]
+
+[ext_resource type="Script" path="res://DeathArea/DeathArea.gd" id="1_b06h7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pxqea"]
+size = Vector2(126.5, 68)
+
+[node name="DeathArea" type="Area2D"]
+script = ExtResource("1_b06h7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(63.75, 30)
+shape = SubResource("RectangleShape2D_pxqea")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
