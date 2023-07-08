@@ -19,7 +19,7 @@ var actions = ["p"]
 
 func _ready():
 	actions = get_parent().level_actions
-	get_node("AnimatedSprite2D").play("Idle")
+	get_node("AnimatedSprite2D2").play("Idle")
 
 var cur_action = ACTIONS_DICT[actions.pop_front()]
 var jumped_this_move = false
