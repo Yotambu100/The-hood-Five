@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cs4sk8a0rywf5" path="res://logs/background.png" id="5_p1y6e"]
 [ext_resource type="PackedScene" uid="uid://y22qwdmagkle" path="res://AutoPlayer/Player.tscn" id="6_j6ydt"]
 [ext_resource type="Texture2D" uid="uid://cpbkifti6mk74" path="res://AutoPlayer/Player_idle1.png" id="7_bhc7d"]
-[ext_resource type="Texture2D" uid="uid://bk0uwxhqvcjfv" path="res://AutoPlayer/Player_idle2.png" id="8_05nsp"]
+[ext_resource type="Texture2D" uid="uid://bk0uwxhqvcjfv" path="res://player/Player hands up.png" id="8_05nsp"]
 [ext_resource type="PackedScene" uid="uid://b5fwak6yrhgoo" path="res://movable/DraggableLog/DraggableLog.tscn" id="9_eoapo"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_0uto6"]
@@ -150,7 +150,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="levelReal1" type="Node2D"]
+[node name="levelReal2" type="Node2D"]
 position = Vector2(-27, -90)
 script = ExtResource("1_a0ajt")
 

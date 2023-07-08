@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cs4sk8a0rywf5" path="res://logs/background.png" id="5_gavns"]
 [ext_resource type="PackedScene" uid="uid://y22qwdmagkle" path="res://AutoPlayer/Player.tscn" id="6_r1ajk"]
 [ext_resource type="Texture2D" uid="uid://cpbkifti6mk74" path="res://AutoPlayer/Player_idle1.png" id="7_7ds1p"]
-[ext_resource type="Texture2D" uid="uid://bk0uwxhqvcjfv" path="res://AutoPlayer/Player_idle2.png" id="8_5bw4y"]
+[ext_resource type="Texture2D" uid="uid://bk0uwxhqvcjfv" path="res://player/Player hands up.png" id="8_5bw4y"]
 [ext_resource type="AudioStream" uid="uid://m8cn6bag7rg4" path="res://music/The Urban Groove - Hanu Dixit.mp3" id="9_2mddc"]
 [ext_resource type="Texture2D" uid="uid://hwq2qcy6n46k" path="res://images/mother.png" id="10_ryrh4"]
 [ext_resource type="PackedScene" uid="uid://b5fwak6yrhgoo" path="res://movable/DraggableLog/DraggableLog.tscn" id="11_hjcxl"]

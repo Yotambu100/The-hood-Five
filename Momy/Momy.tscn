@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://di883upe2yqy5"]
+
+[ext_resource type="Texture2D" uid="uid://hwq2qcy6n46k" path="res://images/mother.png" id="1_144rb"]
+[ext_resource type="Script" path="res://Momy/Momy.gd" id="1_iftsn"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6u30m"]
+radius = 87.0
+height = 322.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6vy6c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_144rb")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i8mx2"]
+radius = 88.0
+height = 326.0
+
+[node name="Momy" type="CharacterBody2D"]
+script = ExtResource("1_iftsn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_6u30m")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_6vy6c")
+animation = &"Idle"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_i8mx2")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
