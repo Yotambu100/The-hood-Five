@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cjssunnlaiq5r"]
+
+[ext_resource type="Script" path="res://CustomWorld/DraggableGrid.gd" id="1_l2tss"]
+[ext_resource type="Texture2D" uid="uid://c1036mscmvfnj" path="res://dummy_assets/Sunny-land-assets-files/PNG/environment/props/block.png" id="2_c8nx6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h47y5"]
+size = Vector2(64, 64)
+
+[node name="DraggableGrid" type="Node2D"]
+script = ExtResource("1_l2tss")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(4, 4)
+texture = ExtResource("2_c8nx6")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_h47y5")
