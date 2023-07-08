@@ -1,14 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://y22qwdmagkle"]
+[gd_scene load_steps=6 format=3 uid="uid://y22qwdmagkle"]
 
 [ext_resource type="Script" path="res://AutoPlayer/Player.gd" id="1_72qd3"]
 [ext_resource type="Texture2D" uid="uid://cpbkifti6mk74" path="res://AutoPlayer/Player_idle1.png" id="2_dhkk1"]
-[ext_resource type="Texture2D" uid="uid://bk0uwxhqvcjfv" path="res://AutoPlayer/Player_idle2.png" id="3_86g3i"]
+[ext_resource type="Texture2D" uid="uid://bk0uwxhqvcjfv" path="res://player/Player hands up.png" id="3_86g3i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xha2n"]
-size = Vector2(60, 42)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_qu1e1"]
-radius = 22.2036
+size = Vector2(9.31919, 51.4728)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2cv27"]
 animations = [{
@@ -28,15 +25,10 @@ animations = [{
 script = ExtResource("1_72qd3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 13)
+position = Vector2(-1.5, -2)
+rotation = 3.14159
+scale = Vector2(6.76024, -1.37828)
 shape = SubResource("RectangleShape2D_xha2n")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(-1, -20)
-shape = SubResource("CircleShape2D_qu1e1")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(1.6, 1.6)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(9.53674e-07, -12)
@@ -46,6 +38,7 @@ animation = &"Idle"
 
 [node name="MoveTimer" type="Timer" parent="."]
 process_callback = 0
+wait_time = 0.5
 autostart = true
 
 [connection signal="timeout" from="MoveTimer" to="." method="_on_move_timer_timeout"]

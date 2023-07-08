@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 
 const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+const JUMP_VELOCITY = -500.0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 const ACTIONS_DICT = {
@@ -15,11 +15,11 @@ const ACTIONS_DICT = {
 }
 
 
-var actions = ["r", "l", "j", "jr", "jl", "j"]
+var actions = ["p"]
 
-#func _ready():
-#	actions = get_parent().level_actions
-#	get_node("AnimatedSprite2D").play("Idle")
+func _ready():
+	actions = get_parent().level_actions
+	get_node("AnimatedSprite2D").play("Idle")
 
 var cur_action = ACTIONS_DICT[actions.pop_front()]
 var jumped_this_move = false
