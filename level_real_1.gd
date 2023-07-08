@@ -22,10 +22,7 @@ func _on_tile_map_ready():
 	pass # Replace with function body.
 	
 
-func show_Dead_Message():
-	get_node("CanvasLayer/SpriteDeadMessage2D").show()
-	get_node("CanvasLayer/SpriteDeadMessage2D").set_scale(Vector2(0.1,0.1))
-	get_node("CanvasLayer/SpriteDeadMessage2D").set_rotation(rotationDeadMessage)
+
 	
 	
 	
@@ -44,18 +41,10 @@ func _on_timer_countdown_1_timeout():
 			Game.level_is_running = true
 			clock.set_text("your time is up !")
 			Game.level_is_running = true 
-			show_Dead_Message()
 					#get_node("CharacterBody2D/CollisionShape2D").emit_signal("renamed")
 					
 		timer -=1
-	if showDeadMessageSteps<7:
-		if showDeadMessageSteps>-1:
-			showDeadMessageSteps+=1
-			scaleDeadMessage+=0.1
-			rotationDeadMessage-=0.2
-			print(scaleDeadMessage)
-			get_node("CanvasLayer/SpriteDeadMessage2D").set_scale(Vector2(scaleDeadMessage,scaleDeadMessage))
-			get_node("CanvasLayer/SpriteDeadMessage2D").set_rotation(0)
+	
 	
 	
 
