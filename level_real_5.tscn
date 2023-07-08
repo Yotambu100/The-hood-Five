@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bxtfrwcm3b1px"]
+[gd_scene load_steps=18 format=3 uid="uid://dk5n4765765w5"]
 
 [ext_resource type="Script" path="res://level_real_1.gd" id="1_8c5dd"]
 [ext_resource type="Texture2D" uid="uid://bpog7h1mcw0kh" path="res://logs/jump_pad.png" id="2_sunq5"]
@@ -121,6 +121,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_left = 1079.0
+offset_top = 18.0
+offset_right = 1135.0
+offset_bottom = 73.0
+text = "settings"
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("6_r4vnj")]
 position = Vector2(187, 550)

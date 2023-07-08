@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://ebmjsklyjmrr"]
+[gd_scene load_steps=16 format=3 uid="uid://coxg2jfp64pr"]
 
 [ext_resource type="Script" path="res://level_real_1.gd" id="1_vdvss"]
 [ext_resource type="Texture2D" uid="uid://bpog7h1mcw0kh" path="res://logs/jump_pad.png" id="2_s2x5d"]
@@ -7,8 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://y22qwdmagkle" path="res://AutoPlayer/Player.tscn" id="4_l66rh"]
 [ext_resource type="Texture2D" uid="uid://cs4sk8a0rywf5" path="res://logs/background.png" id="4_vqu1b"]
 [ext_resource type="AudioStream" uid="uid://m8cn6bag7rg4" path="res://music/The Urban Groove - Hanu Dixit.mp3" id="5_ax5xo"]
-[ext_resource type="Texture2D" uid="uid://cpbkifti6mk74" path="res://AutoPlayer/Player_idle1.png" id="7_jvhgs"]
-[ext_resource type="Texture2D" uid="uid://bk0uwxhqvcjfv" path="res://AutoPlayer/Player_idle2.png" id="8_klv6e"]
 [ext_resource type="Texture2D" uid="uid://hwq2qcy6n46k" path="res://images/mother.png" id="10_lb0ix"]
 [ext_resource type="PackedScene" uid="uid://b5fwak6yrhgoo" path="res://movable/DraggableLog/DraggableLog.tscn" id="11_6pyrq"]
 
@@ -77,20 +75,6 @@ sources/3 = SubResource("TileSetAtlasSource_rshni")
 sources/5 = SubResource("TileSetAtlasSource_4xon2")
 sources/8 = SubResource("TileSetAtlasSource_q18pu")
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_5s3n2"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("7_jvhgs")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_klv6e")
-}],
-"loop": true,
-"name": &"player_move",
-"speed": 5.0
-}]
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_rl430"]
 animations = [{
 "frames": [{
@@ -122,20 +106,19 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("4_l66rh")]
-position = Vector2(187, 550)
-
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="CharacterBody2D"]
-position = Vector2(-3, -3)
-scale = Vector2(0.05, 0.05)
-sprite_frames = SubResource("SpriteFrames_5s3n2")
-animation = &"player_move"
-autoplay = "player_move"
-frame_progress = 0.827327
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_left = 1079.0
+offset_top = 18.0
+offset_right = 1135.0
+offset_bottom = 73.0
+text = "settings"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_ax5xo")
 autoplay = true
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("4_l66rh")]
+position = Vector2(187, 550)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(953, 467)
@@ -144,3 +127,5 @@ sprite_frames = SubResource("SpriteFrames_rl430")
 
 [node name="DraggableLog" parent="." instance=ExtResource("11_6pyrq")]
 position = Vector2(576, 314)
+
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]

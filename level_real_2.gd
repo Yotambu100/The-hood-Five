@@ -1,3 +1,4 @@
+#ofer
 extends Node2D
 
 var level_actions =["jr","r", "jr", "r", "r", "r", "j"]
@@ -13,10 +14,5 @@ func _process(delta):
 
 
 
-func _on_tile_map_ready():
-	pass # Replace with function body.
-	
-
-
 func _on_button_pressed():
-	get_tree().change_scene_to_file("res://main.tscn")
+	get_tree().change_scene_to_file("res://main.gd")
