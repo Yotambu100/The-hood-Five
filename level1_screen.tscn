@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bthjmbbgmdvca"]
+[gd_scene load_steps=13 format=3 uid="uid://d07faoab7spjd"]
 
 [ext_resource type="Texture2D" uid="uid://bs0te35574uuq" path="res://player/Player hands down.png" id="1_7vnit"]
 [ext_resource type="Script" path="res://level1_screen.gd" id="1_bicnu"]
