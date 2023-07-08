@@ -2,7 +2,7 @@ extends Node2D
 var timer=5
 
 
-var level_actions =[ "p", "p", "p", "r", "r", "r", "r", "p", "p",  "j", "r", "l", "r", "j", "j"]
+var level_actions =[ "r", "r", "r", "r", "j" ]
 
 			
 # Called when the node enters the scene tree for the first time.
