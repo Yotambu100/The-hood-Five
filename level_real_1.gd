@@ -2,7 +2,7 @@ extends Node2D
 var timer=5
 
 
-var level_actions =["jr","r", "jr", "r", "r", "r", "j"]
+var level_actions =["p", "p", "p", "p", "p", "p", "p", "p", "p", "p", "p", "p", "r", "jr", "r", "r", "r", "r", "j", "j"]
 
 			
 # Called when the node enters the scene tree for the first time.
@@ -24,7 +24,7 @@ func _on_tile_map_ready():
 
 func _on_button_settings_pressed():
 	get_tree().change_scene_to_file("res://main.tscn")
-
+	
 func _on_timer_countdown_timeout():
 	if timer>-1:
 		var clock = get_node("CanvasLayer/LBL_Time")
@@ -32,4 +32,3 @@ func _on_timer_countdown_timeout():
 		if (timer==0):
 			clock.set_text("your time is up !")
 		timer -=1
-		

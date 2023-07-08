@@ -1,16 +1,14 @@
 extends Node2D
 
-signal loaded()
-signal unloaded()
-
 func _on_body_entered(body):
 	if body == $"../Player":
-		emit_signal("loaded")
+		Game.cur_jump_velocity = Game.JUMP_VELOCITY_SPRING
 
 
 func _on_body_exited(body):
 	if body == $"../Player":
-		emit_signal("unloaded")
+		Game.cur_jump_velocity = Game.JUMP_VELOCITY
+		
 
 var _dragging : bool = false
 

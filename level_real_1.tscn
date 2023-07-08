@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://coxg2jfp64pr"]
+[gd_scene load_steps=17 format=3 uid="uid://ch5jl1tg5s33e"]
 
 [ext_resource type="Script" path="res://level_real_1.gd" id="1_vdvss"]
 [ext_resource type="Texture2D" uid="uid://bpog7h1mcw0kh" path="res://logs/jump_pad.png" id="2_s2x5d"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://y22qwdmagkle" path="res://AutoPlayer/Player.tscn" id="4_l66rh"]
 [ext_resource type="Texture2D" uid="uid://cs4sk8a0rywf5" path="res://logs/background.png" id="4_vqu1b"]
 [ext_resource type="AudioStream" uid="uid://m8cn6bag7rg4" path="res://music/The Urban Groove - Hanu Dixit.mp3" id="5_ax5xo"]
+[ext_resource type="PackedScene" uid="uid://ipn3nqhuq7kn" path="res://movable/DraggableSpring/Spring.tscn" id="9_8jrue"]
 [ext_resource type="Texture2D" uid="uid://hwq2qcy6n46k" path="res://images/mother.png" id="10_lb0ix"]
 [ext_resource type="PackedScene" uid="uid://b5fwak6yrhgoo" path="res://movable/DraggableLog/DraggableLog.tscn" id="11_6pyrq"]
 
@@ -117,8 +118,8 @@ text = "settings"
 stream = ExtResource("5_ax5xo")
 autoplay = true
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("4_l66rh")]
-position = Vector2(187, 550)
+[node name="Player" parent="." instance=ExtResource("4_l66rh")]
+position = Vector2(190, 443)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(953, 467)
@@ -126,6 +127,10 @@ scale = Vector2(0.569333, 0.754545)
 sprite_frames = SubResource("SpriteFrames_rl430")
 
 [node name="DraggableLog" parent="." instance=ExtResource("11_6pyrq")]
-position = Vector2(576, 314)
+position = Vector2(728, 315)
+
+[node name="Spring" parent="." instance=ExtResource("9_8jrue")]
+position = Vector2(322, 565)
+scale = Vector2(0.6, 0.6)
 
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]

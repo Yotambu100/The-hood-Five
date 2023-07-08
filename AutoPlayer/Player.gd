@@ -1,12 +1,6 @@
 extends CharacterBody2D
 
-
-use code with cautio
-
 const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
-const JUMP_VELOCITY_SPRING = -1000.0
-var cur_jump_velocity = JUMP_VELOCITY
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 const ACTIONS_DICT = {
@@ -21,9 +15,8 @@ const ACTIONS_DICT = {
 
 var actions = ["p"]
 
+
 func _ready():
-	
-	
 	
 	actions = get_parent().level_actions
 	get_node("AnimatedSprite2D").play("Idle")
@@ -31,15 +24,17 @@ func _ready():
 var cur_action = ACTIONS_DICT[actions.pop_front()]
 var jumped_this_move = false
 
-
 func _on_move_timer_timeout():
-	if actions.size() == 0:
-		get_node("MoveTimer").queue_free()
-		cur_action = ACTIONS_DICT["p"]
-		#get_tree().quit()
-	else:	
-		jumped_this_move = false
-		cur_action = ACTIONS_DICT[actions.pop_front()]
+	if Game.level_is_running:
+		if actions.size() == 0:
+			get_node("MoveTimer").queue_free()
+			cur_action = ACTIONS_DICT["p"]
+			#get_tree().quit()
+		else:	
+			jumped_this_move = false
+			cur_action = ACTIONS_DICT[actions.pop_front()]
+	else:
+		cur_action = ACTIONS_DICT["p"]		
 
 
 
@@ -61,7 +56,7 @@ func _physics_process(delta):
 			
 		ACTIONS_DICT["j"]:
 			if is_on_floor() and not jumped_this_move:
-				velocity.y = cur_jump_velocity
+				velocity.y = Game.cur_jump_velocity
 				jumped_this_move = true
 			else:
 				velocity.x = move_toward(velocity.x, 0, SPEED)
@@ -69,7 +64,7 @@ func _physics_process(delta):
 		ACTIONS_DICT["jr"]:
 			get_node("AnimatedSprite2D").flip_h = true
 			if is_on_floor() and not jumped_this_move:
-				velocity.y = cur_jump_velocity
+				velocity.y = Game.cur_jump_velocity
 				jumped_this_move = true
 			elif is_on_floor() and jumped_this_move:
 				velocity.x = move_toward(velocity.x, 0, SPEED)
@@ -79,7 +74,7 @@ func _physics_process(delta):
 		ACTIONS_DICT["jl"]:
 			get_node("AnimatedSprite2D").flip_h = false
 			if is_on_floor() and not jumped_this_move:
-				velocity.y = cur_jump_velocity
+				velocity.y = Game.cur_jump_velocity
 				jumped_this_move = true
 			elif is_on_floor() and jumped_this_move:
 				velocity.x = move_toward(velocity.x, 0, SPEED)
@@ -92,11 +87,4 @@ func _physics_process(delta):
 
 	move_and_slide()
 
-
-func _on_spring_loaded():
-	cur_jump_velocity = JUMP_VELOCITY_SPRING
-
-
-func _on_spring_unloaded():
-	cur_jump_velocity = JUMP_VELOCITY
 
