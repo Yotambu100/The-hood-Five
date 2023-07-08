@@ -31,13 +31,14 @@ var jumped_this_move = false
 
 
 func _on_move_timer_timeout():
-	if actions.size() == 0:
-		get_node("MoveTimer").queue_free()
-		cur_action = ACTIONS_DICT["p"]
-		#get_tree().quit()
-	else:	
-		jumped_this_move = false
-		cur_action = ACTIONS_DICT[actions.pop_front()]
+	print("on move")
+	if Game.level_is_running:
+		if actions.size() == 0:
+			get_node("MoveTimer").queue_free()
+			cur_action = ACTIONS_DICT["p"]
+		else:	
+			jumped_this_move = false
+			cur_action = ACTIONS_DICT[actions.pop_front()]
 
 
 
@@ -97,4 +98,7 @@ func _on_spring_loaded():
 
 func _on_spring_unloaded():
 	cur_jump_velocity = JUMP_VELOCITY
+
+def timeOut():
+	print("This is a global function")
 

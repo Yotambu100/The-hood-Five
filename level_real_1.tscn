@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://coxg2jfp64pr"]
+[gd_scene load_steps=18 format=3 uid="uid://coxg2jfp64pr"]
 
 [ext_resource type="Script" path="res://level_real_1.gd" id="1_vdvss"]
 [ext_resource type="Texture2D" uid="uid://bpog7h1mcw0kh" path="res://logs/jump_pad.png" id="2_s2x5d"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cs4sk8a0rywf5" path="res://logs/background.png" id="4_vqu1b"]
 [ext_resource type="AudioStream" uid="uid://m8cn6bag7rg4" path="res://music/The Urban Groove - Hanu Dixit.mp3" id="5_ax5xo"]
 [ext_resource type="Script" path="res://Timer_countdown.gd" id="6_hq22p"]
+[ext_resource type="Texture2D" uid="uid://bbnu3vyptbrbn" path="res://images/Dead message.png" id="7_wt5by"]
 [ext_resource type="Texture2D" uid="uid://hwq2qcy6n46k" path="res://images/mother.png" id="10_lb0ix"]
 [ext_resource type="PackedScene" uid="uid://b5fwak6yrhgoo" path="res://movable/DraggableLog/DraggableLog.tscn" id="11_6pyrq"]
 
@@ -134,6 +135,17 @@ process_priority = 1
 autostart = true
 script = ExtResource("6_hq22p")
 
+[node name="SpriteDeadMessage2D" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+top_level = true
+z_index = 1
+position = Vector2(558, 354)
+rotation = -0.523599
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("7_wt5by")
+region_enabled = true
+region_rect = Rect2(38.1, 78.9613, 942.47, 894.139)
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_ax5xo")
 autoplay = true
@@ -150,5 +162,5 @@ sprite_frames = SubResource("SpriteFrames_rl430")
 position = Vector2(576, 314)
 
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
-
 [connection signal="timeout" from="CanvasLayer/LBL_Time1/Timer_countdown1" to="." method="_on_timer_countdown_1_timeout"]
+[connection signal="renamed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_renamed"]

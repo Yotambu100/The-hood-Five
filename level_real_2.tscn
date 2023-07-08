@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bigirv3bx7cio"]
+[gd_scene load_steps=19 format=3 uid="uid://bigirv3bx7cio"]
 
 [ext_resource type="Script" path="res://level_real_2.gd" id="1_52rv3"]
 [ext_resource type="Script" path="res://CanvasLayer2.gd" id="2_8n06m"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://cevgbquy7dwql" path="res://logs/spikes1.png" id="3_hryvv"]
 [ext_resource type="Texture2D" uid="uid://ca3eysnbjvsvp" path="res://logs/logs3.png" id="4_bn2gu"]
 [ext_resource type="Texture2D" uid="uid://cs4sk8a0rywf5" path="res://logs/background.png" id="5_p1y6e"]
-[ext_resource type="PackedScene" uid="uid://y22qwdmagkle" path="res://AutoPlayer/Player.tscn" id="6_j6ydt"]
 [ext_resource type="Texture2D" uid="uid://cpbkifti6mk74" path="res://AutoPlayer/Player_idle1.png" id="7_bhc7d"]
 [ext_resource type="Script" path="res://Timer_countdown.gd" id="7_qkspt"]
 [ext_resource type="Texture2D" uid="uid://bk0uwxhqvcjfv" path="res://player/Player hands up.png" id="8_05nsp"]
@@ -197,10 +196,7 @@ process_priority = 1
 autostart = true
 script = ExtResource("7_qkspt")
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("6_j6ydt")]
-position = Vector2(226, 331)
-
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="CharacterBody2D"]
+[node name="CharacterBody2D@AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
 position = Vector2(-3, -3)
 scale = Vector2(0.05, 0.05)
 sprite_frames = SubResource("SpriteFrames_gce3p")
