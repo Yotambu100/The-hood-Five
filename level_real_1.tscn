@@ -170,17 +170,6 @@ process_priority = 1
 autostart = true
 script = ExtResource("6_hq22p")
 
-[node name="SpriteDeadMessage2D" type="Sprite2D" parent="CanvasLayer"]
-visible = false
-top_level = true
-z_index = 1
-position = Vector2(558, 354)
-rotation = -0.523599
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("7_wt5by")
-region_enabled = true
-region_rect = Rect2(38.1, 78.9613, 942.47, 894.139)
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_ax5xo")
 autoplay = true
@@ -208,4 +197,3 @@ position = Vector2(526, 676)
 [connection signal="pressed" from="CanvasLayer/settingsButton" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/settingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="timeout" from="CanvasLayer/LBL_Time1/Timer_countdown1" to="." method="_on_timer_countdown_1_timeout"]
-[connection signal="renamed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_renamed"]
