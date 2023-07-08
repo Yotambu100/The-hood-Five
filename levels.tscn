@@ -17,6 +17,7 @@ offset_left = 227.0
 offset_top = 169.0
 offset_right = 268.0
 offset_bottom = 212.0
+text = "2"
 
 [node name="Button3" type="Button" parent="."]
 offset_left = 327.0
@@ -46,3 +47,4 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
