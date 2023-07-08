@@ -1,13 +1,16 @@
-[gd_scene load_steps=17 format=3 uid="uid://ch5jl1tg5s33e"]
+[gd_scene load_steps=18 format=3 uid="uid://ebmjsklyjmrr"]
 
 [ext_resource type="Script" path="res://level_real_1.gd" id="1_vdvss"]
+[ext_resource type="Texture2D" uid="uid://b6kal7hrxo457" path="res://images/buttons/playBtn.png" id="2_c7cio"]
 [ext_resource type="Texture2D" uid="uid://bpog7h1mcw0kh" path="res://logs/jump_pad.png" id="2_s2x5d"]
-[ext_resource type="Texture2D" uid="uid://bt4slornkocuv" path="res://logs/spikes1.png" id="3_bpmmt"]
+[ext_resource type="Texture2D" uid="uid://cevgbquy7dwql" path="res://logs/spikes1.png" id="3_bpmmt"]
 [ext_resource type="Texture2D" uid="uid://ca3eysnbjvsvp" path="res://logs/logs3.png" id="3_i5puy"]
+[ext_resource type="Texture2D" uid="uid://dui00yonpjmlk" path="res://images/buttons/exitBtn.png" id="3_xcim2"]
 [ext_resource type="PackedScene" uid="uid://y22qwdmagkle" path="res://AutoPlayer/Player.tscn" id="4_l66rh"]
 [ext_resource type="Texture2D" uid="uid://cs4sk8a0rywf5" path="res://logs/background.png" id="4_vqu1b"]
 [ext_resource type="AudioStream" uid="uid://m8cn6bag7rg4" path="res://music/The Urban Groove - Hanu Dixit.mp3" id="5_ax5xo"]
 [ext_resource type="PackedScene" uid="uid://ipn3nqhuq7kn" path="res://movable/DraggableSpring/Spring.tscn" id="9_8jrue"]
+[ext_resource type="Script" path="res://Timer_countdown.gd" id="6_hq22p"]
 [ext_resource type="Texture2D" uid="uid://hwq2qcy6n46k" path="res://images/mother.png" id="10_lb0ix"]
 [ext_resource type="PackedScene" uid="uid://b5fwak6yrhgoo" path="res://movable/DraggableLog/DraggableLog.tscn" id="11_6pyrq"]
 
@@ -93,6 +96,35 @@ script = ExtResource("1_vdvss")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="settingCanvas" type="CanvasLayer" parent="CanvasLayer"]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/settingCanvas"]
+offset_left = 40.0
+offset_top = 49.0
+offset_right = 1108.0
+offset_bottom = 617.0
+color = Color(0, 0, 0, 0.827451)
+
+[node name="backButton" type="Button" parent="CanvasLayer/settingCanvas"]
+offset_left = 415.0
+offset_top = 456.0
+offset_right = 696.0
+offset_bottom = 584.0
+icon = ExtResource("2_c7cio")
+
+[node name="QuitButton" type="Button" parent="CanvasLayer/settingCanvas"]
+anchors_preset = -1
+anchor_left = 1.575
+anchor_top = 0.114
+anchor_right = 1.575
+anchor_bottom = 0.114
+offset_left = -1765.4
+offset_top = -21.872
+offset_right = -1602.4
+offset_bottom = 158.128
+scale = Vector2(0.564287, 0.601193)
+icon = ExtResource("3_xcim2")
+
 [node name="TileMap" type="TileMap" parent="CanvasLayer"]
 scale = Vector2(0.41, 0.41)
 tile_set = SubResource("TileSet_u60sw")
@@ -107,12 +139,32 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Button" type="Button" parent="CanvasLayer"]
+[node name="settingsButton" type="Button" parent="CanvasLayer"]
 offset_left = 1079.0
 offset_top = 18.0
 offset_right = 1135.0
 offset_bottom = 73.0
 text = "settings"
+
+[node name="LBL_Time1" type="Label" parent="CanvasLayer"]
+z_as_relative = false
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -772.0
+offset_top = -191.0
+offset_right = -731.0
+offset_bottom = -165.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(4, 4)
+
+[node name="Timer_countdown1" type="Timer" parent="CanvasLayer/LBL_Time1"]
+process_priority = 1
+autostart = true
+script = ExtResource("6_hq22p")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_ax5xo")
@@ -134,3 +186,8 @@ position = Vector2(322, 565)
 scale = Vector2(0.6, 0.6)
 
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
+[connection signal="timeout" from="CanvasLayer/LBL_Time1/Timer_countdown1" to="." method="_on_timer_countdown_1_timeout"]
+[connection signal="pressed" from="CanvasLayer/settingCanvas/backButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/settingCanvas/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/settingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/settingsButton" to="." method="_on_button_pressed"]

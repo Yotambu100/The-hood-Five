@@ -20,6 +20,10 @@ config/icon="res://icon.svg"
 
 Game="*res://Globals/Game.gd"
 
+[autoload]
+
+SceneTranstion="*res://scene_transtion.tscn"
+
 [display]
 
 window/stretch/mode="canvas_items"
