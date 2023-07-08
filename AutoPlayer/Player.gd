@@ -43,9 +43,11 @@ func _physics_process(delta):
 		
 	match cur_action:
 		ACTIONS_DICT["l"]:
+			get_node("AnimatedSprite2D").flip_h = false
 			velocity.x = -1 * SPEED
 			
 		ACTIONS_DICT["r"]:
+			get_node("AnimatedSprite2D").flip_h = true
 			velocity.x = SPEED
 			
 		ACTIONS_DICT["j"]:
@@ -56,6 +58,7 @@ func _physics_process(delta):
 				velocity.x = move_toward(velocity.x, 0, SPEED)
 				
 		ACTIONS_DICT["jr"]:
+			get_node("AnimatedSprite2D").flip_h = true
 			if is_on_floor() and not jumped_this_move:
 				velocity.y = JUMP_VELOCITY
 				jumped_this_move = true
@@ -65,6 +68,7 @@ func _physics_process(delta):
 				velocity.x = SPEED
 
 		ACTIONS_DICT["jl"]:
+			get_node("AnimatedSprite2D").flip_h = false
 			if is_on_floor() and not jumped_this_move:
 				velocity.y = JUMP_VELOCITY
 				jumped_this_move = true
@@ -76,22 +80,6 @@ func _physics_process(delta):
 		ACTIONS_DICT["p"]:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 			
-		
-#	if cur_action != ACTIONS_DICT["p"]:
-#		# Handle Jump.
-#		if cur_action == ACTIONS_DICT["j"] and is_on_floor() and not jumped_this_move:
-#			velocity.y = JUMP_VELOCITY
-#			jumped_this_move = true
-#		# Handle left and right.
-#		if cur_action:
-#			velocity.x = cur_action * SPEED
-#			jumped_this_move = false
-#		else:
-#			#Stop in the air
-#			velocity.x = move_toward(velocity.x, 0, SPEED)
-#	else:
-#		velocity.x = move_toward(velocity.x, 0, SPEED)
-#
 
 	move_and_slide()
 
