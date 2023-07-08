@@ -7,7 +7,7 @@ var level_actions =["jr","r", "jr", "r", "r", "r", "j"]
 			
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	get_node("CanvasLayer/settingCanvas").hide()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -15,11 +15,12 @@ func _process(delta):
 	pass
 
 
-
 func _on_tile_map_ready():
 	pass # Replace with function body.
 	
 
+func _on_settings_button_pressed():#stop the game 
+	get_node("CanvasLayer/settingCanvas").show()
 
 
 func _on_button_settings_pressed():
@@ -33,3 +34,12 @@ func _on_timer_countdown_1_timeout():
 			clock.set_text("your time is up !")
 		timer -=1
 	
+
+
+func _on_back_button_pressed():#restart the game
+	get_node("CanvasLayer/settingCanvas").hide()
+
+
+
+func _on_quit_button_pressed():
+	get_tree().quit()
