@@ -2,7 +2,7 @@ extends Node2D
 var timer=5
 
 
-var level_actions =["p", "p", "p", "p", "p", "p", "p", "p", "p", "p", "p", "p", "r", "jr", "r", "r", "r", "r", "j", "j"]
+var level_actions =[ "p", "p", "p", "r", "r", "r", "r", "p", "p",  "j", "r", "l", "r", "j", "j"]
 
 			
 # Called when the node enters the scene tree for the first time.
@@ -31,6 +31,7 @@ func _on_timer_countdown_1_timeout():
 		var clock = get_node("CanvasLayer/LBL_Time1")
 		clock.set_text(str(timer)+" seconds left")
 		if (timer==0):
+			Game.level_is_running = true
 			clock.set_text("your time is up !")
 		timer -=1
 

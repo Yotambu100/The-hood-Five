@@ -182,10 +182,10 @@ scale = Vector2(0.569333, 0.754545)
 sprite_frames = SubResource("SpriteFrames_rl430")
 
 [node name="DraggableLog" parent="." instance=ExtResource("11_6pyrq")]
-position = Vector2(728, 315)
+position = Vector2(572, 594)
 
 [node name="Spring" parent="." instance=ExtResource("9_8jrue")]
-position = Vector2(322, 565)
+position = Vector2(622, 317)
 scale = Vector2(0.6, 0.6)
 
 [connection signal="pressed" from="CanvasLayer/settingCanvas/backButton" to="." method="_on_back_button_pressed"]

@@ -17,7 +17,7 @@ var actions = ["p"]
 @onready var anim = get_node("AnimatedSprite2D")
 
 func _ready():
-	
+	Game.level_is_running = false
 	actions = get_parent().level_actions
 	anim.play("Idle")
 
@@ -32,14 +32,15 @@ func _on_move_timer_timeout():
 			cur_action = ACTIONS_DICT["p"]
 			#get_tree().quit()
 		else:
-			if anim_is_running:
+			if not anim_is_running and cur_action != ACTIONS_DICT["p"]:
 				anim.play("Run")
 				anim_is_running = true
 				
 			jumped_this_move = false
 			cur_action = ACTIONS_DICT[actions.pop_front()]
+			print(cur_action)
 	else:		
-		if not anim_is_running:
+		if anim_is_running:
 			anim.play("Idle")
 			anim_is_running = false
 			
@@ -53,7 +54,7 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y += gravity * delta
 		
-		
+
 	match cur_action:
 		ACTIONS_DICT["l"]:
 			anim.flip_h = false
@@ -90,8 +91,10 @@ func _physics_process(delta):
 			else:
 				velocity.x = -1 * SPEED
 				
-		ACTIONS_DICT["p"]:
+		ACTIONS_DICT["p"]:			
 			anim.play("Idle")
+			anim_is_running = false
+			
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 			
 
