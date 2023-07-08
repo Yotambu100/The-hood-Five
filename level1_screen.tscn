@@ -1,10 +1,35 @@
-[gd_scene load_steps=6 format=3 uid="uid://bthjmbbgmdvca"]
+[gd_scene load_steps=13 format=3 uid="uid://bthjmbbgmdvca"]
 
 [ext_resource type="Texture2D" uid="uid://bs0te35574uuq" path="res://player/Player hands down.png" id="1_7vnit"]
+[ext_resource type="Script" path="res://level1_screen.gd" id="1_bicnu"]
+[ext_resource type="Texture2D" uid="uid://dohknbnpgm4rw" path="res://player/Untitled2 1.png" id="1_h3ysr"]
+[ext_resource type="Texture2D" uid="uid://mf1pyjd0jasg" path="res://player/Untitled6.png" id="2_gm8df"]
 [ext_resource type="Texture2D" uid="uid://bk0uwxhqvcjfv" path="res://player/Player hands up.png" id="2_r70kc"]
+[ext_resource type="Texture2D" uid="uid://3rlk2luyu63o" path="res://player/Untitled8.png" id="3_csvog"]
+[ext_resource type="Texture2D" uid="uid://thun8q25y2n7" path="res://player/Untitled9.png" id="4_n7j3i"]
 [ext_resource type="Texture2D" uid="uid://bepehxg5w2gtm" path="res://images/log.png" id="16_qnhix"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lh5b4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_h3ysr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_n7j3i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_csvog")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_gm8df")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_euyer"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -15,7 +40,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 2.0
+"speed": 5.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jb4r1"]
@@ -44,15 +69,33 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_urtea"]
+
 [node name="Player" type="Area2D"]
 position = Vector2(497, 307)
+script = ExtResource("1_bicnu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 clip_children = 2
 position = Vector2(-237, 166)
 scale = Vector2(0.15, 0.15)
 sprite_frames = SubResource("SpriteFrames_lh5b4")
-frame_progress = 0.205173
+frame_progress = 0.992735
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(-223, 175)
+scale = Vector2(0.15, 0.15)
+sprite_frames = SubResource("SpriteFrames_euyer")
+frame_progress = 0.820591
+
+[node name="show_next_moves" type="LinkButton" parent="."]
+offset_left = -256.0
+offset_top = -200.0
+offset_right = -68.0
+offset_bottom = -160.0
+text = "Show player next moves"
+underline = 1
 
 [node name="log_animated" type="AnimatedSprite2D" parent="."]
 visible = false
@@ -278,3 +321,6 @@ region_rect = Rect2(64, 47, 131, 131)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(48, 403)
 scale = Vector2(1.03403, 1.03403)
+shape = SubResource("RectangleShape2D_urtea")
+
+[connection signal="pressed" from="show_next_moves" to="." method="_on_show_next_moves_pressed"]
