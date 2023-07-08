@@ -150,4 +150,5 @@ sprite_frames = SubResource("SpriteFrames_rl430")
 position = Vector2(576, 314)
 
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
+
 [connection signal="timeout" from="CanvasLayer/LBL_Time1/Timer_countdown1" to="." method="_on_timer_countdown_1_timeout"]

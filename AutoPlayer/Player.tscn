@@ -1,40 +1,81 @@
-[gd_scene load_steps=6 format=3 uid="uid://y22qwdmagkle"]
+[gd_scene load_steps=19 format=3 uid="uid://y22qwdmagkle"]
 
 [ext_resource type="Script" path="res://AutoPlayer/Player.gd" id="1_72qd3"]
 [ext_resource type="Texture2D" uid="uid://cpbkifti6mk74" path="res://AutoPlayer/Player_idle1.png" id="2_dhkk1"]
 [ext_resource type="Texture2D" uid="uid://bk0uwxhqvcjfv" path="res://player/Player hands up.png" id="3_86g3i"]
 
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xha2n"]
-size = Vector2(9.31919, 51.4728)
+size = Vector2(10.9463, 63.8477)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2cv27"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_dhkk1")
+"texture": ExtResource("2_devk5")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_86g3i")
+"texture": ExtResource("3_3b0ye")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_nc5iv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_5mrno")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_l0anr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_5o43o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_crxiy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_o8osa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_h6121")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_40ayh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_0upk4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_e67cx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_xklhf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_7dwwf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_kq23g")
 }],
 "loop": true,
 "name": &"Idle",
-"speed": 5.0
+"speed": 28.0
 }]
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_72qd3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1.5, -2)
+position = Vector2(-3, 7.99991)
 rotation = 3.14159
 scale = Vector2(6.76024, -1.37828)
 shape = SubResource("RectangleShape2D_xha2n")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(9.53674e-07, -12)
+position = Vector2(7.62939e-06, -0.999985)
 scale = Vector2(0.1225, 0.107875)
 sprite_frames = SubResource("SpriteFrames_2cv27")
 animation = &"Idle"
+frame_progress = 0.552494
 
 [node name="MoveTimer" type="Timer" parent="."]
 process_callback = 0
