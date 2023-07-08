@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://y22qwdmagkle"]
+[gd_scene load_steps=7 format=3 uid="uid://y22qwdmagkle"]
 
 [ext_resource type="Script" path="res://AutoPlayer/Player.gd" id="1_72qd3"]
-[ext_resource type="Texture2D" uid="uid://c0a3mp0m22onm" path="res://AutoPlayer/Player_idle1.png" id="2_dhkk1"]
+[ext_resource type="Texture2D" uid="uid://cpbkifti6mk74" path="res://AutoPlayer/Player_idle1.png" id="2_dhkk1"]
+[ext_resource type="Texture2D" uid="uid://bk0uwxhqvcjfv" path="res://AutoPlayer/Player_idle2.png" id="3_86g3i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xha2n"]
 size = Vector2(60, 42)
@@ -9,14 +10,17 @@ size = Vector2(60, 42)
 [sub_resource type="CircleShape2D" id="CircleShape2D_qu1e1"]
 radius = 22.2036
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_qj6ni"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_2cv27"]
 animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_dhkk1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_86g3i")
 }],
 "loop": true,
-"name": &"default",
+"name": &"Idle",
 "speed": 5.0
 }]
 
@@ -35,9 +39,10 @@ shape = SubResource("CircleShape2D_qu1e1")
 zoom = Vector2(1.6, 1.6)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(5, -15)
+position = Vector2(9.53674e-07, -12)
 scale = Vector2(0.1225, 0.107875)
-sprite_frames = SubResource("SpriteFrames_qj6ni")
+sprite_frames = SubResource("SpriteFrames_2cv27")
+animation = &"Idle"
 
 [node name="MoveTimer" type="Timer" parent="."]
 process_callback = 0
