@@ -3,6 +3,8 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
+const JUMP_VELOCITY_SPRING = -1000.0
+var cur_jump_velocity = JUMP_VELOCITY
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 const ACTIONS_DICT = {
@@ -34,6 +36,8 @@ func _on_move_timer_timeout():
 		jumped_this_move = false
 		cur_action = ACTIONS_DICT[actions.pop_front()]
 
+
+
 func _physics_process(delta):
 	
 	# Add the gravity.
@@ -52,7 +56,7 @@ func _physics_process(delta):
 			
 		ACTIONS_DICT["j"]:
 			if is_on_floor() and not jumped_this_move:
-				velocity.y = JUMP_VELOCITY
+				velocity.y = cur_jump_velocity
 				jumped_this_move = true
 			else:
 				velocity.x = move_toward(velocity.x, 0, SPEED)
@@ -60,7 +64,7 @@ func _physics_process(delta):
 		ACTIONS_DICT["jr"]:
 			get_node("AnimatedSprite2D").flip_h = true
 			if is_on_floor() and not jumped_this_move:
-				velocity.y = JUMP_VELOCITY
+				velocity.y = cur_jump_velocity
 				jumped_this_move = true
 			elif is_on_floor() and jumped_this_move:
 				velocity.x = move_toward(velocity.x, 0, SPEED)
@@ -70,7 +74,7 @@ func _physics_process(delta):
 		ACTIONS_DICT["jl"]:
 			get_node("AnimatedSprite2D").flip_h = false
 			if is_on_floor() and not jumped_this_move:
-				velocity.y = JUMP_VELOCITY
+				velocity.y = cur_jump_velocity
 				jumped_this_move = true
 			elif is_on_floor() and jumped_this_move:
 				velocity.x = move_toward(velocity.x, 0, SPEED)
@@ -82,4 +86,12 @@ func _physics_process(delta):
 			
 
 	move_and_slide()
+
+
+func _on_spring_loaded():
+	cur_jump_velocity = JUMP_VELOCITY_SPRING
+
+
+func _on_spring_unloaded():
+	cur_jump_velocity = JUMP_VELOCITY
 

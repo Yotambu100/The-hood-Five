@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://ipn3nqhuq7kn"]
+
+[ext_resource type="Script" path="res://movable/DraggableSpring/Spring.gd" id="1_i27sv"]
+[ext_resource type="Texture2D" uid="uid://bpog7h1mcw0kh" path="res://logs/jump_pad.png" id="2_b273c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ovcrv"]
+size = Vector2(61, 98)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nd25t"]
+texture = ExtResource("2_b273c")
+texture_region_size = Vector2i(8, 8)
+2:1/size_in_atlas = Vector2i(9, 14)
+2:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_i2yx4"]
+sources/1 = SubResource("TileSetAtlasSource_nd25t")
+
+[node name="Spring" type="Node2D"]
+script = ExtResource("1_i27sv")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-9.5, -6)
+shape = SubResource("RectangleShape2D_ovcrv")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_i2yx4")
+format = 2
+layer_0/tile_data = PackedInt32Array(-1, 131073, 1)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_body_exited"]
