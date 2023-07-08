@@ -1,7 +1,7 @@
 [gd_scene load_steps=18 format=3 uid="uid://ebmjsklyjmrr"]
 
 [ext_resource type="Script" path="res://level_real_1.gd" id="1_vdvss"]
-[ext_resource type="Texture2D" uid="uid://bgmxr2kyvq2dd" path="res://logs/jump_pad.png" id="2_s2x5d"]
+[ext_resource type="Texture2D" uid="uid://bpog7h1mcw0kh" path="res://logs/jump_pad.png" id="2_s2x5d"]
 [ext_resource type="Texture2D" uid="uid://cevgbquy7dwql" path="res://logs/spikes1.png" id="3_bpmmt"]
 [ext_resource type="Texture2D" uid="uid://ca3eysnbjvsvp" path="res://logs/logs3.png" id="3_i5puy"]
 [ext_resource type="PackedScene" uid="uid://y22qwdmagkle" path="res://AutoPlayer/Player.tscn" id="4_l66rh"]
@@ -14,7 +14,6 @@
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_snjxs"]
 texture = ExtResource("2_s2x5d")
 texture_region_size = Vector2i(65, 55)
-7:8/size_in_atlas = Vector2i(1, 2)
 7:8/0 = 0
 7:8/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 7:8/0/physics_layer_0/angular_velocity = 0.0

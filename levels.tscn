@@ -30,12 +30,14 @@ offset_left = 427.0
 offset_top = 169.0
 offset_right = 468.0
 offset_bottom = 212.0
+text = "4"
 
 [node name="Button5" type="Button" parent="."]
 offset_left = 526.0
 offset_top = 166.0
 offset_right = 567.0
 offset_bottom = 209.0
+text = "5"
 
 [node name="Label" type="Label" parent="."]
 offset_left = 419.0
@@ -48,3 +50,5 @@ vertical_alignment = 1
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="Button5" to="." method="_on_button_5_pressed"]
