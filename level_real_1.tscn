@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://level_real_1.gd" id="1_vdvss"]
 [ext_resource type="Texture2D" uid="uid://bpog7h1mcw0kh" path="res://logs/jump_pad.png" id="2_s2x5d"]
-[ext_resource type="Texture2D" uid="uid://cevgbquy7dwql" path="res://logs/spikes1.png" id="3_bpmmt"]
+[ext_resource type="Texture2D" uid="uid://bt4slornkocuv" path="res://logs/spikes1.png" id="3_bpmmt"]
 [ext_resource type="Texture2D" uid="uid://ca3eysnbjvsvp" path="res://logs/logs3.png" id="3_i5puy"]
 [ext_resource type="PackedScene" uid="uid://y22qwdmagkle" path="res://AutoPlayer/Player.tscn" id="4_l66rh"]
 [ext_resource type="Texture2D" uid="uid://cs4sk8a0rywf5" path="res://logs/background.png" id="4_vqu1b"]

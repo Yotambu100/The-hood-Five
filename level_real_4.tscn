@@ -14,7 +14,6 @@
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_snjxs"]
 texture = ExtResource("2_ptpri")
 texture_region_size = Vector2i(65, 55)
-7:8/size_in_atlas = Vector2i(1, 2)
 7:8/0 = 0
 7:8/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 7:8/0/physics_layer_0/angular_velocity = 0.0
@@ -102,7 +101,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="levelReal4" type="Node2D"]
+[node name="levelReal5" type="Node2D"]
 position = Vector2(-27, -90)
 script = ExtResource("1_7q51v")
 
