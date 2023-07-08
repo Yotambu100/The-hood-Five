@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cua3evllxg0ox"]
+[gd_scene load_steps=13 format=3 uid="uid://nid5g28wxxl6"]
 
 [ext_resource type="Script" path="res://level_real_1.gd" id="1_vdvss"]
 [ext_resource type="Texture2D" uid="uid://bpog7h1mcw0kh" path="res://logs/jump_pad.png" id="2_s2x5d"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ca3eysnbjvsvp" path="res://logs/logs3.png" id="3_i5puy"]
 [ext_resource type="PackedScene" uid="uid://y22qwdmagkle" path="res://AutoPlayer/Player.tscn" id="4_l66rh"]
 [ext_resource type="Texture2D" uid="uid://cs4sk8a0rywf5" path="res://logs/background.png" id="4_vqu1b"]
+[ext_resource type="AudioStream" uid="uid://m8cn6bag7rg4" path="res://music/The Urban Groove - Hanu Dixit.mp3" id="5_ax5xo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_snjxs"]
 texture = ExtResource("2_s2x5d")
@@ -95,3 +96,7 @@ grow_vertical = 2
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("4_l66rh")]
 position = Vector2(191, 456)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_ax5xo")
+autoplay = true

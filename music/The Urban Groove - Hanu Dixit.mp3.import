@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://m8cn6bag7rg4"
+path="res://.godot/imported/The Urban Groove - Hanu Dixit.mp3-52e0113c3aeb93e37eb29c11dc031b80.mp3str"
+
+[deps]
+
+source_file="res://music/The Urban Groove - Hanu Dixit.mp3"
+dest_files=["res://.godot/imported/The Urban Groove - Hanu Dixit.mp3-52e0113c3aeb93e37eb29c11dc031b80.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
