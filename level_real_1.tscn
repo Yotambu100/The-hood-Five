@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://nid5g28wxxl6"]
+[gd_scene load_steps=16 format=3 uid="uid://nid5g28wxxl6"]
 
 [ext_resource type="Script" path="res://level_real_1.gd" id="1_vdvss"]
 [ext_resource type="Texture2D" uid="uid://bpog7h1mcw0kh" path="res://logs/jump_pad.png" id="2_s2x5d"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://y22qwdmagkle" path="res://AutoPlayer/Player.tscn" id="4_l66rh"]
 [ext_resource type="Texture2D" uid="uid://cs4sk8a0rywf5" path="res://logs/background.png" id="4_vqu1b"]
 [ext_resource type="AudioStream" uid="uid://m8cn6bag7rg4" path="res://music/The Urban Groove - Hanu Dixit.mp3" id="5_ax5xo"]
+[ext_resource type="Texture2D" uid="uid://cpbkifti6mk74" path="res://AutoPlayer/Player_idle1.png" id="7_jvhgs"]
+[ext_resource type="Texture2D" uid="uid://bk0uwxhqvcjfv" path="res://AutoPlayer/Player_idle2.png" id="8_biay7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_snjxs"]
 texture = ExtResource("2_s2x5d")
@@ -74,6 +76,20 @@ sources/3 = SubResource("TileSetAtlasSource_rshni")
 sources/5 = SubResource("TileSetAtlasSource_4xon2")
 sources/8 = SubResource("TileSetAtlasSource_q18pu")
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_5s3n2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_jvhgs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_biay7")
+}],
+"loop": true,
+"name": &"player_move",
+"speed": 5.0
+}]
+
 [node name="levelReal1" type="Node2D"]
 position = Vector2(-27, -90)
 script = ExtResource("1_vdvss")
@@ -95,7 +111,15 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("4_l66rh")]
-position = Vector2(191, 456)
+position = Vector2(187, 550)
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="CharacterBody2D"]
+position = Vector2(-3, -3)
+scale = Vector2(0.05, 0.05)
+sprite_frames = SubResource("SpriteFrames_5s3n2")
+animation = &"player_move"
+autoplay = "player_move"
+frame_progress = 0.827327
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_ax5xo")
