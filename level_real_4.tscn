@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bc1ogoxj2mith"]
+[gd_scene load_steps=19 format=3 uid="uid://nid5g28wxxl6"]
 
 [ext_resource type="Script" path="res://level_real_1.gd" id="1_7q51v"]
 [ext_resource type="Texture2D" uid="uid://bpog7h1mcw0kh" path="res://logs/jump_pad.png" id="2_ptpri"]

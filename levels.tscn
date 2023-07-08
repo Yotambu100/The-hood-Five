@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://bwsijqs6kp3cb"]
+[gd_scene load_steps=2 format=3 uid="uid://c3xunucouwnu7"]
 
 [ext_resource type="Script" path="res://levels.gd" id="1_7ii8d"]
 
@@ -51,8 +51,8 @@ vertical_alignment = 1
 
 [connection signal="pressed" from="level1" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="level1" to="." method="_on_level_1_pressed"]
-[connection signal="pressed" from="level2" to="." method="_on_level_2_pressed"]
 [connection signal="pressed" from="level2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="level2" to="." method="_on_level_2_pressed"]
 [connection signal="pressed" from="level3" to="." method="_on_level_3_pressed"]
 [connection signal="pressed" from="level4" to="." method="_on_level_4_pressed"]
 [connection signal="pressed" from="level5" to="." method="_on_level_5_pressed"]
