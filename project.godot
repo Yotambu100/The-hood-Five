@@ -27,3 +27,10 @@ project/assembly_name="Thehood 5"
 
 renderer/rendering_method="mobile"
 environment/defaults/default_clear_color=Color(0.843137, 0.6, 0.486275, 1)
+
+[shader_globals]
+
+Level_Timer={
+"type": "int",
+"value": 5
+}
