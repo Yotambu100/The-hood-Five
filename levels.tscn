@@ -1,58 +1,91 @@
-[gd_scene load_steps=2 format=3 uid="uid://bwsijqs6kp3cb"]
+[gd_scene load_steps=3 format=3 uid="uid://bwsijqs6kp3cb"]
 
 [ext_resource type="Script" path="res://levels.gd" id="1_7ii8d"]
+[ext_resource type="Texture2D" uid="uid://7bgaqptlmk15" path="res://images/backGroundLeveks.png" id="2_jubpd"]
 
 [node name="Levels" type="Node2D"]
 script = ExtResource("1_7ii8d")
 
-[node name="level1" type="Button" parent="."]
-offset_left = 126.0
-offset_top = 169.0
-offset_right = 168.0
-offset_bottom = 212.0
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="BackGroundLeveks" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(579, 321)
+scale = Vector2(1.00401, 1.00379)
+texture = ExtResource("2_jubpd")
+
+[node name="level1" type="Button" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 123.0
+offset_top = 135.0
+offset_right = 165.0
+offset_bottom = 178.0
+scale = Vector2(4.19387, 3.7716)
 text = "1"
 
-[node name="level2" type="Button" parent="."]
-offset_left = 227.0
-offset_top = 169.0
-offset_right = 268.0
-offset_bottom = 212.0
-text = "2"
+[node name="level2" type="Button" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 375.0
+offset_top = 135.0
+offset_right = 416.0
+offset_bottom = 178.0
+scale = Vector2(3.80203, 3.86346)
 
-[node name="level3" type="Button" parent="."]
-offset_left = 327.0
-offset_top = 169.0
-offset_right = 368.0
-offset_bottom = 212.0
-text = "3"
+[node name="level3" type="Button" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 618.0
+offset_top = 136.0
+offset_right = 659.0
+offset_bottom = 179.0
+scale = Vector2(4.10802, 3.81808)
 
-[node name="level4" type="Button" parent="."]
-offset_left = 427.0
-offset_top = 169.0
-offset_right = 468.0
-offset_bottom = 212.0
-text = "4"
+[node name="level4" type="Button" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 844.0
+offset_top = 137.0
+offset_right = 885.0
+offset_bottom = 180.0
+scale = Vector2(4.25814, 3.72641)
 
-[node name="level5" type="Button" parent="."]
-offset_left = 526.0
-offset_top = 166.0
-offset_right = 567.0
-offset_bottom = 209.0
-text = "5"
+[node name="level5" type="Button" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 127.0
+offset_top = 404.0
+offset_right = 169.0
+offset_bottom = 447.0
+scale = Vector2(4.19387, 3.7716)
+text = "1"
 
-[node name="text(\'LEVELS\')" type="Label" parent="."]
-offset_left = 419.0
-offset_top = 45.0
-offset_right = 677.0
-offset_bottom = 109.0
-text = "LEVELS"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="level6" type="Button" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 375.0
+offset_top = 402.0
+offset_right = 416.0
+offset_bottom = 445.0
+scale = Vector2(3.80203, 3.86346)
 
-[connection signal="pressed" from="level1" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="level1" to="." method="_on_level_1_pressed"]
-[connection signal="pressed" from="level2" to="." method="_on_level_2_pressed"]
-[connection signal="pressed" from="level2" to="." method="_on_button_2_pressed"]
-[connection signal="pressed" from="level3" to="." method="_on_level_3_pressed"]
-[connection signal="pressed" from="level4" to="." method="_on_level_4_pressed"]
-[connection signal="pressed" from="level5" to="." method="_on_level_5_pressed"]
+[node name="level7" type="Button" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 618.0
+offset_top = 403.0
+offset_right = 659.0
+offset_bottom = 446.0
+scale = Vector2(4.10802, 3.81808)
+
+[node name="level8" type="Button" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 844.0
+offset_top = 404.0
+offset_right = 885.0
+offset_bottom = 447.0
+scale = Vector2(4.25814, 3.72641)
+
+[connection signal="pressed" from="CanvasLayer/level1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="CanvasLayer/level1" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/level2" to="." method="_on_level_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/level2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/level3" to="." method="_on_level_3_pressed"]
+[connection signal="pressed" from="CanvasLayer/level4" to="." method="_on_level_4_pressed"]
+[connection signal="pressed" from="CanvasLayer/level5" to="." method="_on_level_5_pressed"]
+[connection signal="pressed" from="CanvasLayer/level6" to="." method="_on_level_6_pressed"]
+[connection signal="pressed" from="CanvasLayer/level7" to="." method="_on_level_7_pressed"]
+[connection signal="pressed" from="CanvasLayer/level8" to="." method="_on_level_8_pressed"]

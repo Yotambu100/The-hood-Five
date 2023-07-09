@@ -1,7 +1,22 @@
-[gd_scene load_steps=6 format=3 uid="uid://di883upe2yqy5"]
+[gd_scene load_steps=21 format=3 uid="uid://di883upe2yqy5"]
 
-[ext_resource type="Texture2D" uid="uid://hwq2qcy6n46k" path="res://images/mother.png" id="1_144rb"]
 [ext_resource type="Script" path="res://Momy/Momy.gd" id="1_iftsn"]
+[ext_resource type="Texture2D" uid="uid://2k2hdj4kqb85" path="res://Momy/momyAnimation/momyIdle_1.png" id="2_dl2w5"]
+[ext_resource type="Texture2D" uid="uid://drqp1pohgq33k" path="res://Momy/momyAnimation/momyIdle_2.png" id="3_ecbug"]
+[ext_resource type="Texture2D" uid="uid://dglrdukgu0m7x" path="res://Momy/momyAnimation/momyIdle_3.png" id="4_egml7"]
+[ext_resource type="Texture2D" uid="uid://gf26gdr4lr2v" path="res://Momy/momyAnimation/momyIdle_4.png" id="5_w1tgd"]
+[ext_resource type="Texture2D" uid="uid://d1h23iclf7j28" path="res://Momy/momyAnimation/momyIdle_5.png" id="6_edvcx"]
+[ext_resource type="Texture2D" uid="uid://glg06qnge6b5" path="res://Momy/momyAnimation/momyIdle_6.png" id="7_mlv8k"]
+[ext_resource type="Texture2D" uid="uid://btg1sd8o4nm4e" path="res://Momy/momyAnimation/momyIdle_7.png" id="8_g2ld7"]
+[ext_resource type="Texture2D" uid="uid://ed3iuuqch06d" path="res://Momy/momyAnimation/momyIdle_8.png" id="9_hxr8f"]
+[ext_resource type="Texture2D" uid="uid://wuuspy57m5o0" path="res://Momy/momyAnimation/momyIdle_9.png" id="10_qotk6"]
+[ext_resource type="Texture2D" uid="uid://cprk4h5jba8od" path="res://Momy/momyAnimation/momyIdle_10.png" id="11_qjtg4"]
+[ext_resource type="Texture2D" uid="uid://c4j1iwgpnowr5" path="res://Momy/momyAnimation/momyIdle_11.png" id="12_imnr0"]
+[ext_resource type="Texture2D" uid="uid://bb1cb6rxfe81n" path="res://Momy/momyAnimation/momyIdle_12.png" id="13_g3ik4"]
+[ext_resource type="Texture2D" uid="uid://cdnq04fv8bkkf" path="res://Momy/momyAnimation/momyIdle_13.png" id="14_l244h"]
+[ext_resource type="Texture2D" uid="uid://ef5x7rhrvbem" path="res://Momy/momyAnimation/momyIdle_14.png" id="15_p22ai"]
+[ext_resource type="Texture2D" uid="uid://cys22ldqbxyj8" path="res://Momy/momyAnimation/momyIdle_15.png" id="16_pkxt0"]
+[ext_resource type="Texture2D" uid="uid://c2wq0jvo0u5pg" path="res://Bubble speech + moves sign (1).png" id="17_uqtby"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6u30m"]
 radius = 87.0
@@ -11,30 +26,83 @@ height = 322.0
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_144rb")
+"texture": ExtResource("2_dl2w5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ecbug")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_egml7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_w1tgd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_edvcx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_mlv8k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_g2ld7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_hxr8f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_qotk6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_qjtg4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_imnr0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_g3ik4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_l244h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_p22ai")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_pkxt0")
 }],
 "loop": true,
 "name": &"Idle",
-"speed": 5.0
+"speed": 30.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i8mx2"]
-radius = 88.0
-height = 326.0
+radius = 179.667
+height = 491.429
 
 [node name="Momy" type="CharacterBody2D"]
+scale = Vector2(0.6, 0.6)
 script = ExtResource("1_iftsn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_6u30m")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_6vy6c")
 animation = &"Idle"
+frame_progress = 0.4195
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-5, 1.66667)
 shape = SubResource("CapsuleShape2D_i8mx2")
+
+[node name="BubbleSpeech" type="Sprite2D" parent="."]
+position = Vector2(-253.874, -229.214)
+scale = Vector2(0.551602, 0.551602)
+texture = ExtResource("17_uqtby")
+region_enabled = true
+region_rect = Rect2(154, 323, 690, 526)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

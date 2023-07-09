@@ -6,7 +6,7 @@ var Number_OF_LEVELS=5
 #var level_scores = Array[5]
 
 # player stats
-var JUMP_VELOCITY = -400.0
+var JUMP_VELOCITY = -300.0
 var JUMP_VELOCITY_SPRING = -1000.0
 
 var cur_jump_velocity = JUMP_VELOCITY

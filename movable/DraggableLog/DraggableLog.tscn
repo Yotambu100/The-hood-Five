@@ -24,10 +24,10 @@ tile_size = Vector2i(36, 36)
 sources/0 = SubResource("TileSetAtlasSource_1akh4")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_et84p"]
-size = Vector2(89.5, 29)
+size = Vector2(89.5, 30)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r11l8"]
-size = Vector2(89, 29.5)
+size = Vector2(90, 29.875)
 
 [node name="DraggableLog" type="Node2D"]
 script = ExtResource("1_07cgf")
@@ -41,13 +41,13 @@ layer_0/tile_data = PackedInt32Array(0, 0, 4)
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(7.25, 7.5)
+position = Vector2(7, 7)
 shape = SubResource("RectangleShape2D_et84p")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(7, 7)
+position = Vector2(6.75, 6.9375)
 shape = SubResource("RectangleShape2D_r11l8")
 
 [connection signal="input_event" from="Area2D" to="." method="_on_Area2D_input_event"]

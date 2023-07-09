@@ -1,6 +1,11 @@
 extends CharacterBody2D
 
 
+@onready var anim = get_node("AnimatedSprite2D")
+
+
+func _ready():
+	anim.play("Idle")
 
 	
 func _on_area_2d_body_entered(body):

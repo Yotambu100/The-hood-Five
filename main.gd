@@ -12,3 +12,7 @@ func _on_play_pressed():
 	SceneTranstion.change_scene_to_file("res://levels.tscn")
 
 
+
+
+func _on_button_pressed():
+	get_tree().change_scene_to_file("res://how_to_play.tscn")

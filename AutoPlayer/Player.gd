@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 300.0
+const SPEED = 220.0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 const ACTIONS_DICT = {
@@ -11,7 +11,6 @@ const ACTIONS_DICT = {
 	"jl" : -2,
 	"p" : 999
 }
-
 
 var actions = ["p"]
 @onready var anim = get_node("AnimatedSprite2D")
