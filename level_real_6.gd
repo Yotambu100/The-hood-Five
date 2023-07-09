@@ -1,12 +1,12 @@
 extends Node2D
 
 
-var timer=10
+var timer=30
 var showDeadMessageSteps=0
 var scaleDeadMessage=0.1
 var rotationDeadMessage=0
 
-var level_actions =["r","r", "r", "r", "r", "r", "r"]
+var level_actions =["l","l", "l", "l", "l", "jr", "r", "jr",]
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.

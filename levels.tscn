@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://bwsijqs6kp3cb"]
+[gd_scene load_steps=5 format=3 uid="uid://bwsijqs6kp3cb"]
 
 [ext_resource type="Script" path="res://levels.gd" id="1_7ii8d"]
 [ext_resource type="Texture2D" uid="uid://7bgaqptlmk15" path="res://images/backGroundLeveks.png" id="2_jubpd"]
+[ext_resource type="Texture2D" uid="uid://dui00yonpjmlk" path="res://images/buttons/exitBtn.png" id="3_apd4a"]
+[ext_resource type="Texture2D" uid="uid://df2fewmxksv4e" path="res://Untitled 91.png" id="4_ojgxm"]
 
 [node name="Levels" type="Node2D"]
 script = ExtResource("1_7ii8d")
@@ -79,13 +81,41 @@ offset_right = 885.0
 offset_bottom = 447.0
 scale = Vector2(4.25814, 3.72641)
 
-[connection signal="pressed" from="CanvasLayer/level1" to="." method="_on_level_1_pressed"]
+[node name="backButton" type="Button" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 1053.0
+offset_top = 8.0
+offset_right = 1136.0
+offset_bottom = 103.0
+
+[node name="ExitBtn" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(1097, 55)
+scale = Vector2(0.641935, 0.674419)
+texture = ExtResource("3_apd4a")
+
+[node name="Untitled91" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(447, 604)
+scale = Vector2(0.548035, 0.60587)
+texture = ExtResource("4_ojgxm")
+
+[node name="Untitled92" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(744, 611)
+scale = Vector2(0.548035, 0.60587)
+texture = ExtResource("4_ojgxm")
+
+[node name="Untitled93" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(1020, 602)
+scale = Vector2(0.548035, 0.60587)
+texture = ExtResource("4_ojgxm")
+
 [connection signal="pressed" from="CanvasLayer/level1" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/level2" to="." method="_on_level_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/level1" to="." method="_on_level_1_pressed"]
 [connection signal="pressed" from="CanvasLayer/level2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/level2" to="." method="_on_level_2_pressed"]
 [connection signal="pressed" from="CanvasLayer/level3" to="." method="_on_level_3_pressed"]
 [connection signal="pressed" from="CanvasLayer/level4" to="." method="_on_level_4_pressed"]
 [connection signal="pressed" from="CanvasLayer/level5" to="." method="_on_level_5_pressed"]
 [connection signal="pressed" from="CanvasLayer/level6" to="." method="_on_level_6_pressed"]
 [connection signal="pressed" from="CanvasLayer/level7" to="." method="_on_level_7_pressed"]
 [connection signal="pressed" from="CanvasLayer/level8" to="." method="_on_level_8_pressed"]
+[connection signal="pressed" from="CanvasLayer/backButton" to="." method="_on_back_button_pressed"]

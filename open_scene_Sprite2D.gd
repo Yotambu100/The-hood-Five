@@ -15,21 +15,26 @@ func _on_texture_button_pressed():
 	next_image()
 	
 func next_image():
+	print("next image")
 	if (sprite1.visible):
 		sprite1.hide()
 		sprite2.show()
+		print(7)
 	else: if (sprite2.visible):
 		sprite2.hide()
 		sprite3.show()
+		print(8)
 	else: if (sprite3.visible):
-		get_tree().change_scene_to_file("targetmain.tscn")
+		print(5)
+		get_tree().change_scene_to_file("main.tscn")
 	
 
 
 func _on_ready():
+	print(9)
 	sprite1.texture=load("res://images/StoryBoard/firstStoryBoard.png")
-	sprite2.texture=load("res://images/StoryBoard/firstStoryBoard.png")
-	sprite3.texture=load("res://images/StoryBoard/firstStoryBoard.png")
+	sprite2.texture=load("res://images/StoryBoard/secondStoryBoard.png")
+	sprite3.texture=load("res://images/StoryBoard/thirdStoryBoard.png")
 
 	sprite1.set_scale(Vector2(1,1))
 	sprite2.set_scale(Vector2(1,1))

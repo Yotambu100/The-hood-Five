@@ -27,8 +27,13 @@ func _on_level_6_pressed():
 	get_tree().change_scene_to_file("res://level_real_6.tscn")	
 
 func _on_level_7_pressed():
-	get_tree().change_scene_to_file("res://level_real_7.tscn")	
+	pass# get_tree().change_scene_to_file("res://level_real_7.tscn")	
 
 
 func _on_level_8_pressed():
-	get_tree().change_scene_to_file("res://level_real_8.tscn")	
+	pass #get_tree().change_scene_to_file("res://level_real_8.tscn")	
+
+
+func _on_back_button_pressed():
+	get_tree().change_scene_to_file("res://main.tscn")
+	

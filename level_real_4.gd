@@ -1,6 +1,6 @@
 extends Node2D
 
-var timer=10
+var timer=30
 var showDeadMessageSteps=0
 var scaleDeadMessage=0.1
 var rotationDeadMessage=0
@@ -32,4 +32,4 @@ func _on_reset_button_pressed():
 
 
 func _on_settings_button_pressed():
-	get_tree().change_scene_to_file("res://levels.tscn").
+	get_tree().change_scene_to_file("res://levels.tscn")

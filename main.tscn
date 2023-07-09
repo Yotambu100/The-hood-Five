@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cq57nof5wvr3k"]
+[gd_scene load_steps=6 format=3 uid="uid://cq57nof5wvr3k"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_j25ak"]
 [ext_resource type="Texture2D" uid="uid://b6kal7hrxo457" path="res://images/buttons/playBtn.png" id="2_4xdt2"]
 [ext_resource type="Texture2D" uid="uid://cxw7meefqty16" path="res://Untitled14 3.png" id="2_drdik"]
 [ext_resource type="Texture2D" uid="uid://dui00yonpjmlk" path="res://images/buttons/exitBtn.png" id="3_70l3v"]
+[ext_resource type="Texture2D" uid="uid://dusn4y2a8j7mg" path="res://images/How to play.png" id="5_wyim5"]
 
 [node name="Main" type="Node2D"]
 position = Vector2(-1, -1)
@@ -34,11 +35,17 @@ flat = true
 icon_alignment = 1
 
 [node name="Button" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
 offset_left = 1122.0
 offset_top = 30.0
 offset_right = 1130.0
 offset_bottom = 38.0
-scale = Vector2(-14.9359, 7.19548)
+scale = Vector2(-21.9543, 9.22795)
+
+[node name="HowToPlay" type="Sprite2D" parent="."]
+position = Vector2(1030.49, 113)
+scale = Vector2(0.294562, 0.319273)
+texture = ExtResource("5_wyim5")
 
 [connection signal="pressed" from="play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]

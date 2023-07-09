@@ -5,17 +5,18 @@
 [node name="open_scene" type="Node2D"]
 
 [node name="openSceneSprite2D" type="Sprite2D" parent="."]
-position = Vector2(578, 331)
+position = Vector2(2, -1)
 script = ExtResource("1_iu77u")
 
 [node name="Timer" type="Timer" parent="openSceneSprite2D"]
 wait_time = 5.0
 
 [node name="Button" type="Button" parent="openSceneSprite2D"]
-offset_left = -478.0
-offset_top = -240.0
-offset_right = -470.0
-offset_bottom = -232.0
+modulate = Color(1, 1, 1, 0)
+offset_left = 2.0
+offset_top = 11.0
+offset_right = 1161.0
+offset_bottom = 665.0
 
 [connection signal="ready" from="openSceneSprite2D" to="openSceneSprite2D" method="_on_ready"]
 [connection signal="pressed" from="openSceneSprite2D/Button" to="openSceneSprite2D" method="_on_button_pressed"]

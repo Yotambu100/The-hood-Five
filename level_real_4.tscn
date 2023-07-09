@@ -68,6 +68,7 @@ offset_bottom = -262.0
 grow_horizontal = 0
 grow_vertical = 2
 scale = Vector2(4, 4)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_6gfm6")
 metadata/_edit_use_anchors_ = true
 

@@ -1,6 +1,6 @@
 extends Node2D
 
-var timer=10
+var timer=30
 var showDeadMessageSteps=0
 var scaleDeadMessage=0.1
 var rotationDeadMessage=0
